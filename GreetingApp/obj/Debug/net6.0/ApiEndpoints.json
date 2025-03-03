@@ -1,16 +1,6 @@
 [
   {
     "ContainingType": "GreetingApp.Controllers.GreetingController",
-    "Method": "Get",
-    "RelativePath": "Greeting",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "GreetingApp.Controllers.GreetingController",
     "Method": "Post",
     "RelativePath": "Greeting",
     "HttpMethod": "POST",
@@ -59,6 +49,26 @@
   },
   {
     "ContainingType": "GreetingApp.Controllers.GreetingController",
+    "Method": "GetGreeting",
+    "RelativePath": "Greeting",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "GreetingApp.Controllers.GreetingController",
     "Method": "Delete",
     "RelativePath": "Greeting/{key}",
     "HttpMethod": "DELETE",
@@ -71,6 +81,16 @@
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GreetingApp.Controllers.GreetingController",
+    "Method": "Get",
+    "RelativePath": "Greeting/Get",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   }
 ]

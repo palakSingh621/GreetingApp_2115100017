@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\user\\source\\GreetingApp\\ModelLayer\\ModelLayer.csproj",
+      "projectUniqueName": "C:\\Users\\user\\source\\GreetingApp_2115100017\\ModelLayer\\ModelLayer.csproj",
       "projectName": "ModelLayer",
-      "projectPath": "C:\\Users\\user\\source\\GreetingApp\\ModelLayer\\ModelLayer.csproj",
+      "projectPath": "C:\\Users\\user\\source\\GreetingApp_2115100017\\ModelLayer\\ModelLayer.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\user\\source\\GreetingApp\\ModelLayer\\obj\\",
+      "outputPath": "C:\\Users\\user\\source\\GreetingApp_2115100017\\ModelLayer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

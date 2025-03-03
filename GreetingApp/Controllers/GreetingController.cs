@@ -1,5 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using BusinessLayer;
+﻿using BusinessLayer.Interface;
+using Microsoft.AspNetCore.Mvc;
 using ModelLayer.Model;
 namespace GreetingApp.Controllers
 {
@@ -11,15 +11,19 @@ namespace GreetingApp.Controllers
     public class GreetingController : ControllerBase
     {
         private readonly ILogger<GreetingController> _logger;
+        private readonly IGreetingBL _greetingBL;
         private static Dictionary<string, string> greetings = new Dictionary<string, string>();
-        public GreetingController(ILogger<GreetingController> logger)
+        public GreetingController(ILogger<GreetingController> logger, IGreetingBL greetingBL)
         {
             _logger = logger;
+            _greetingBL = greetingBL;
         }
+        //UC1
         /// <summary>
         /// Get method to get the greeting message
         /// </summary>
         [HttpGet]
+        [Route("Get")]
         public IActionResult Get()
         {
             ResponseModel<string> response = new ResponseModel<string>();
@@ -88,14 +92,14 @@ namespace GreetingApp.Controllers
             return NotFound(new ResponseModel<string> { Success = false, Message = "Key not found!" });
         }
         /// <summary>
-        /// Patch method to modify part of a greeting
+        /// Patch method to Appending part of a greeting
         /// </summary>
         [HttpPatch]
         public IActionResult Patch(RequestModel requestModel)
         {
             if (greetings.ContainsKey(requestModel.key))
             {
-                greetings[requestModel.key] = greetings[requestModel.key] + " " + requestModel.value; // ✅ Append new value
+                greetings[requestModel.key] = greetings[requestModel.key] + " " + requestModel.value;
 
                 ResponseModel<string> response = new ResponseModel<string>
                 {
@@ -109,6 +113,17 @@ namespace GreetingApp.Controllers
             _logger.LogWarning($"Greeting Key Not Found: {requestModel.key}");
             return NotFound(new ResponseModel<string> { Success = false, Message = "Key not found!" });
         }
-        
+
+        //UC2
+        /// <summary>
+        /// Get Method to print Hello World
+        /// </summary>
+        [HttpGet]
+        public string GetGreeting()
+        {
+            _logger.LogInformation("Printing Hello World using Services Layers.");
+            return _greetingBL.GetGreetingsBL();
+        }
+
     }
 }

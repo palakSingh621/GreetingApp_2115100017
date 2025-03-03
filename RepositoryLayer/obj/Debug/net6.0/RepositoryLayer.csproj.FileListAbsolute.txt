@@ -9,3 +9,15 @@ C:\Users\user\source\GreetingApp\RepositoryLayer\obj\Debug\net6.0\RepositoryLaye
 C:\Users\user\source\GreetingApp\RepositoryLayer\obj\Debug\net6.0\refint\RepositoryLayer.dll
 C:\Users\user\source\GreetingApp\RepositoryLayer\obj\Debug\net6.0\RepositoryLayer.pdb
 C:\Users\user\source\GreetingApp\RepositoryLayer\obj\Debug\net6.0\ref\RepositoryLayer.dll
+C:\Users\user\source\GreetingApp_2115100017\RepositoryLayer\bin\Debug\net6.0\RepositoryLayer.deps.json
+C:\Users\user\source\GreetingApp_2115100017\RepositoryLayer\bin\Debug\net6.0\RepositoryLayer.dll
+C:\Users\user\source\GreetingApp_2115100017\RepositoryLayer\bin\Debug\net6.0\RepositoryLayer.pdb
+C:\Users\user\source\GreetingApp_2115100017\RepositoryLayer\obj\Debug\net6.0\RepositoryLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\source\GreetingApp_2115100017\RepositoryLayer\obj\Debug\net6.0\RepositoryLayer.AssemblyInfoInputs.cache
+C:\Users\user\source\GreetingApp_2115100017\RepositoryLayer\obj\Debug\net6.0\RepositoryLayer.AssemblyInfo.cs
+C:\Users\user\source\GreetingApp_2115100017\RepositoryLayer\obj\Debug\net6.0\RepositoryLayer.csproj.CoreCompileInputs.cache
+C:\Users\user\source\GreetingApp_2115100017\RepositoryLayer\obj\Debug\net6.0\RepositoryLayer.sourcelink.json
+C:\Users\user\source\GreetingApp_2115100017\RepositoryLayer\obj\Debug\net6.0\RepositoryLayer.dll
+C:\Users\user\source\GreetingApp_2115100017\RepositoryLayer\obj\Debug\net6.0\refint\RepositoryLayer.dll
+C:\Users\user\source\GreetingApp_2115100017\RepositoryLayer\obj\Debug\net6.0\RepositoryLayer.pdb
+C:\Users\user\source\GreetingApp_2115100017\RepositoryLayer\obj\Debug\net6.0\ref\RepositoryLayer.dll

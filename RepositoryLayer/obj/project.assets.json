@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\user\\source\\GreetingApp\\RepositoryLayer\\RepositoryLayer.csproj",
+      "projectUniqueName": "C:\\Users\\user\\source\\GreetingApp_2115100017\\RepositoryLayer\\RepositoryLayer.csproj",
       "projectName": "RepositoryLayer",
-      "projectPath": "C:\\Users\\user\\source\\GreetingApp\\RepositoryLayer\\RepositoryLayer.csproj",
+      "projectPath": "C:\\Users\\user\\source\\GreetingApp_2115100017\\RepositoryLayer\\RepositoryLayer.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\user\\source\\GreetingApp\\RepositoryLayer\\obj\\",
+      "outputPath": "C:\\Users\\user\\source\\GreetingApp_2115100017\\RepositoryLayer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

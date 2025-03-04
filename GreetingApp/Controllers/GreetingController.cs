@@ -119,10 +119,16 @@ namespace GreetingApp.Controllers
         /// Get Method to print Hello World
         /// </summary>
         [HttpGet]
-        public string GetGreeting()
+        public IActionResult GetGreeting(string firstName, string LastName)
         {
-            _logger.LogInformation("Printing Hello World using Services Layers.");
-            return _greetingBL.GetGreetingsBL();
+            _logger.LogInformation("Printing Hello to the User from Services Layers.");
+            ResponseModel<string> response = new ResponseModel<string>
+            {
+                Success = true,
+                Message = _greetingBL.GetGreetingsBL(firstName, LastName),
+                Data = _greetingBL.GetGreetingsBL(firstName, LastName)
+            };
+            return Ok(response);
         }
 
     }

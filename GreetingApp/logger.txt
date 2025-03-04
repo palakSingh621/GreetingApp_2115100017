@@ -246,3 +246,51 @@
 2025-03-03 20:57:06.5360 INFO Executed action GreetingApp.Controllers.GreetingController.Delete (GreetingApp) in 3.8249ms 
 2025-03-03 20:57:06.5360 INFO Executed endpoint 'GreetingApp.Controllers.GreetingController.Delete (GreetingApp)' 
 2025-03-03 20:57:06.5360 INFO Request finished HTTP/2 DELETE https://localhost:7244/Greeting/Morning - - - 200 - application/json;+charset=utf-8 154.5634ms 
+2025-03-04 09:02:17.3781 INFO Application Starting... 
+2025-03-04 09:02:18.0028 INFO Now listening on: https://localhost:7244 
+2025-03-04 09:02:18.0105 INFO Now listening on: http://localhost:5113 
+2025-03-04 09:02:18.0567 INFO Application started. Press Ctrl+C to shut down. 
+2025-03-04 09:02:18.0567 INFO Hosting environment: Development 
+2025-03-04 09:02:18.0567 INFO Content root path: C:\Users\user\source\GreetingApp_2115100017\GreetingApp\ 
+2025-03-04 09:02:19.3413 INFO Request starting HTTP/2 GET https://localhost:7244/Swagger/index.html - - 
+2025-03-04 09:02:19.3413 INFO Request starting HTTP/2 GET https://localhost:7244/_framework/aspnetcore-browser-refresh.js - - 
+2025-03-04 09:02:19.3749 INFO Request finished HTTP/2 GET https://localhost:7244/_framework/aspnetcore-browser-refresh.js - - - 200 12354 application/javascript;+charset=utf-8 36.9377ms 
+2025-03-04 09:02:19.4888 INFO Request starting HTTP/2 GET https://localhost:7244/Swagger/v1/swagger.json - - 
+2025-03-04 09:02:19.5651 INFO Request finished HTTP/2 GET https://localhost:7244/Swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 76.3045ms 
+2025-03-04 09:02:19.6909 INFO Request finished HTTP/2 GET https://localhost:7244/Swagger/index.html - - - 200 - text/html;charset=utf-8 353.9943ms 
+2025-03-04 09:02:19.7045 INFO Request starting HTTP/2 GET https://localhost:7244/_framework/aspnetcore-browser-refresh.js - - 
+2025-03-04 09:02:19.7045 INFO Request starting HTTP/2 GET https://localhost:7244/Swagger/index.js - - 
+2025-03-04 09:02:19.7045 INFO Request finished HTTP/2 GET https://localhost:7244/_framework/aspnetcore-browser-refresh.js - - - 200 12354 application/javascript;+charset=utf-8 0.8827ms 
+2025-03-04 09:02:19.7045 INFO Request finished HTTP/2 GET https://localhost:7244/Swagger/index.js - - - 200 - application/javascript;charset=utf-8 1.4045ms 
+2025-03-04 09:02:19.7197 INFO Request starting HTTP/2 GET https://localhost:7244/_vs/browserLink - - 
+2025-03-04 09:02:19.7803 INFO Request finished HTTP/2 GET https://localhost:7244/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 60.5964ms 
+2025-03-04 09:02:19.8320 INFO Request starting HTTP/2 GET https://localhost:7244/Swagger/v1/swagger.json - - 
+2025-03-04 09:02:19.8320 INFO Request finished HTTP/2 GET https://localhost:7244/Swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 2.2063ms 
+2025-03-04 09:02:32.8735 INFO Request starting HTTP/2 GET https://localhost:7244/Greeting?firstName=Palak&LastName=Singh - - 
+2025-03-04 09:02:32.8793 INFO Executing endpoint 'GreetingApp.Controllers.GreetingController.GetGreeting (GreetingApp)' 
+2025-03-04 09:02:32.8990 INFO Route matched with {action = "GetGreeting", controller = "Greeting"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetGreeting(System.String, System.String) on controller GreetingApp.Controllers.GreetingController (GreetingApp). 
+2025-03-04 09:02:32.9253 INFO Printing Hello World using Services Layers. 
+2025-03-04 09:02:32.9318 INFO Executing OkObjectResult, writing value of type 'ModelLayer.Model.ResponseModel`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2025-03-04 09:02:32.9318 INFO Executed action GreetingApp.Controllers.GreetingController.GetGreeting (GreetingApp) in 35.2271ms 
+2025-03-04 09:02:32.9318 INFO Executed endpoint 'GreetingApp.Controllers.GreetingController.GetGreeting (GreetingApp)' 
+2025-03-04 09:02:32.9318 INFO Request finished HTTP/2 GET https://localhost:7244/Greeting?firstName=Palak&LastName=Singh - - - 200 - application/json;+charset=utf-8 66.0671ms 
+2025-03-04 09:04:19.9273 INFO Application Starting... 
+2025-03-04 09:04:20.7132 INFO Now listening on: https://localhost:7244 
+2025-03-04 09:04:20.7244 INFO Now listening on: http://localhost:5113 
+2025-03-04 09:04:20.7967 INFO Application started. Press Ctrl+C to shut down. 
+2025-03-04 09:04:20.7967 INFO Hosting environment: Development 
+2025-03-04 09:04:20.7967 INFO Content root path: C:\Users\user\source\GreetingApp_2115100017\GreetingApp\ 
+2025-03-04 09:04:21.8791 INFO Request starting HTTP/2 GET https://localhost:7244/Swagger/index.html - - 
+2025-03-04 09:04:21.8791 INFO Request starting HTTP/2 GET https://localhost:7244/_framework/aspnetcore-browser-refresh.js - - 
+2025-03-04 09:04:21.9110 INFO Request finished HTTP/2 GET https://localhost:7244/_framework/aspnetcore-browser-refresh.js - - - 200 12354 application/javascript;+charset=utf-8 36.4021ms 
+2025-03-04 09:04:22.0332 INFO Request starting HTTP/2 GET https://localhost:7244/Swagger/v1/swagger.json - - 
+2025-03-04 09:04:22.1069 INFO Request finished HTTP/2 GET https://localhost:7244/Swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 73.8128ms 
+2025-03-04 09:04:22.2582 INFO Request finished HTTP/2 GET https://localhost:7244/Swagger/index.html - - - 200 - text/html;charset=utf-8 385.1796ms 
+2025-03-04 09:04:22.2717 INFO Request starting HTTP/2 GET https://localhost:7244/_framework/aspnetcore-browser-refresh.js - - 
+2025-03-04 09:04:22.2717 INFO Request starting HTTP/2 GET https://localhost:7244/Swagger/index.js - - 
+2025-03-04 09:04:22.2717 INFO Request finished HTTP/2 GET https://localhost:7244/_framework/aspnetcore-browser-refresh.js - - - 200 12354 application/javascript;+charset=utf-8 1.8152ms 
+2025-03-04 09:04:22.2717 INFO Request finished HTTP/2 GET https://localhost:7244/Swagger/index.js - - - 200 - application/javascript;charset=utf-8 2.4507ms 
+2025-03-04 09:04:22.2889 INFO Request starting HTTP/2 GET https://localhost:7244/_vs/browserLink - - 
+2025-03-04 09:04:22.3661 INFO Request finished HTTP/2 GET https://localhost:7244/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 77.2687ms 
+2025-03-04 09:04:22.4075 INFO Request starting HTTP/2 GET https://localhost:7244/Swagger/v1/swagger.json - - 
+2025-03-04 09:04:22.4075 INFO Request finished HTTP/2 GET https://localhost:7244/Swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 1.8346ms 

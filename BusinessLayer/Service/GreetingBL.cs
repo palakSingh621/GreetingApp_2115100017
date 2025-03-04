@@ -15,9 +15,9 @@ namespace BusinessLayer.Service
         {
             _greetingRL = greetingRL;
         }
-        public string GetGreetingsBL()
+        public string GetGreetingsBL(string firstName, string lastName)
         {
-            return _greetingRL.GetGreetingsRL();
+            return _greetingRL.GetGreetingsRL(firstName,lastName);
         }
     }
 }

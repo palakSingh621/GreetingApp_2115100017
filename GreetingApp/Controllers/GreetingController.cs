@@ -217,6 +217,31 @@ namespace GreetingApp.Controllers
             response.Data= newMessage;
             return Ok(response);
         }
-
+        //UC8
+        /// <summary>
+        /// Deleting Greeting message By ID
+        /// </summary>
+        [HttpDelete]
+        [Route("deleteGreeting/{id}")]
+        public IActionResult DeleteGreeting(int id)
+        {
+            bool isDeleted = _greetingBL.DeleteGreeting(id);
+            if (isDeleted)
+            {
+                _logger.LogInformation($"Greeting message with ID {id} deleted successfully.");
+                ResponseModel<string> response = new ResponseModel<string>
+                {
+                    Success = true,
+                    Message = "Greeting deleted successfully",
+                    Data = $"Deleted Greeting ID: {id}"
+                };
+                return Ok(response);
+            }
+            else
+            {
+                _logger.LogWarning($"Greeting message with ID {id} not found.");
+                return NotFound(new { Success = false, Message = "Greeting not found" });
+            }
+        }
     }
 }

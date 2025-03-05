@@ -771,3 +771,59 @@ SELECT @@ROWCOUNT;
 2025-03-05 16:21:10.1776 INFO Executed action GreetingApp.Controllers.GreetingController.UpdateGreeting (GreetingApp) in 4586.2722ms 
 2025-03-05 16:21:10.1780 INFO Executed endpoint 'GreetingApp.Controllers.GreetingController.UpdateGreeting (GreetingApp)' 
 2025-03-05 16:21:10.1958 INFO Request finished HTTP/1.1 PUT https://localhost:7244/Greeting/updateGreeting/1 application/json 17 - 200 - application/json;+charset=utf-8 4657.7935ms 
+2025-03-05 16:37:17.8838 INFO Application Starting... 
+2025-03-05 16:37:18.9784 INFO Now listening on: https://localhost:7244 
+2025-03-05 16:37:18.9784 INFO Now listening on: http://localhost:5113 
+2025-03-05 16:37:19.0562 INFO Application started. Press Ctrl+C to shut down. 
+2025-03-05 16:37:19.0562 INFO Hosting environment: Development 
+2025-03-05 16:37:19.0562 INFO Content root path: C:\Users\user\source\GreetingApp_2115100017\GreetingApp\ 
+2025-03-05 16:37:23.7221 INFO Request starting HTTP/2 GET https://localhost:7244/Swagger/index.html - - 
+2025-03-05 16:37:24.9861 INFO Request finished HTTP/2 GET https://localhost:7244/Swagger/index.html - - - 200 - text/html;charset=utf-8 1271.3517ms 
+2025-03-05 16:37:25.7736 INFO Request starting HTTP/2 GET https://localhost:7244/_framework/aspnetcore-browser-refresh.js - - 
+2025-03-05 16:37:25.7736 INFO Request starting HTTP/2 GET https://localhost:7244/Swagger/index.js - - 
+2025-03-05 16:37:25.7736 INFO Request starting HTTP/2 GET https://localhost:7244/_vs/browserLink - - 
+2025-03-05 16:37:25.7736 INFO Request finished HTTP/2 GET https://localhost:7244/Swagger/index.js - - - 200 - application/javascript;charset=utf-8 3.4845ms 
+2025-03-05 16:37:25.7736 INFO Request finished HTTP/2 GET https://localhost:7244/_framework/aspnetcore-browser-refresh.js - - - 200 12354 application/javascript;+charset=utf-8 9.6035ms 
+2025-03-05 16:37:25.7944 INFO Request starting HTTP/2 GET https://localhost:7244/_framework/aspnetcore-browser-refresh.js - - 
+2025-03-05 16:37:25.7944 INFO Request finished HTTP/2 GET https://localhost:7244/_framework/aspnetcore-browser-refresh.js - - - 200 12354 application/javascript;+charset=utf-8 0.6532ms 
+2025-03-05 16:37:25.9652 INFO Request finished HTTP/2 GET https://localhost:7244/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 191.7895ms 
+2025-03-05 16:37:25.9988 INFO Request starting HTTP/2 GET https://localhost:7244/Swagger/v1/swagger.json - - 
+2025-03-05 16:37:26.0095 INFO Request finished HTTP/2 GET https://localhost:7244/Swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 10.7587ms 
+2025-03-05 16:37:26.1243 INFO Request starting HTTP/2 GET https://localhost:7244/Swagger/v1/swagger.json - - 
+2025-03-05 16:37:26.1243 INFO Request finished HTTP/2 GET https://localhost:7244/Swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 4.2621ms 
+2025-03-05 16:37:46.9416 INFO Request starting HTTP/1.1 DELETE https://localhost:7244/Greeting/deleteGreeting/3 - - 
+2025-03-05 16:37:46.9534 INFO Executing endpoint 'GreetingApp.Controllers.GreetingController.DeleteGreeting (GreetingApp)' 
+2025-03-05 16:37:46.9961 INFO Route matched with {action = "DeleteGreeting", controller = "Greeting"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult DeleteGreeting(Int32) on controller GreetingApp.Controllers.GreetingController (GreetingApp). 
+2025-03-05 16:37:48.5540 INFO Entity Framework Core 6.0.36 initialized 'GreetingAppContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.36' with options: None 
+2025-03-05 16:37:51.5612 INFO Executed DbCommand (195ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [g].[Id], [g].[Message]
+FROM [GreetingMessages] AS [g]
+WHERE [g].[Id] = @__p_0 
+2025-03-05 16:37:51.9295 INFO Executed DbCommand (17ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [GreetingMessages]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT; 
+2025-03-05 16:37:51.9699 INFO Greeting message with ID 3 deleted successfully. 
+2025-03-05 16:37:51.9834 INFO Executing OkObjectResult, writing value of type 'ModelLayer.Model.ResponseModel`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2025-03-05 16:37:52.0025 INFO Executed action GreetingApp.Controllers.GreetingController.DeleteGreeting (GreetingApp) in 4997.6454ms 
+2025-03-05 16:37:52.0025 INFO Executed endpoint 'GreetingApp.Controllers.GreetingController.DeleteGreeting (GreetingApp)' 
+2025-03-05 16:37:52.0182 INFO Request finished HTTP/1.1 DELETE https://localhost:7244/Greeting/deleteGreeting/3 - - - 200 - application/json;+charset=utf-8 5076.4361ms 
+2025-03-05 16:37:59.6017 INFO Request starting HTTP/1.1 DELETE https://localhost:7244/Greeting/deleteGreeting/1 - - 
+2025-03-05 16:37:59.6017 INFO Executing endpoint 'GreetingApp.Controllers.GreetingController.DeleteGreeting (GreetingApp)' 
+2025-03-05 16:37:59.6017 INFO Route matched with {action = "DeleteGreeting", controller = "Greeting"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult DeleteGreeting(Int32) on controller GreetingApp.Controllers.GreetingController (GreetingApp). 
+2025-03-05 16:37:59.6703 INFO Entity Framework Core 6.0.36 initialized 'GreetingAppContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.36' with options: None 
+2025-03-05 16:37:59.6794 INFO Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [g].[Id], [g].[Message]
+FROM [GreetingMessages] AS [g]
+WHERE [g].[Id] = @__p_0 
+2025-03-05 16:37:59.6794 INFO Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [GreetingMessages]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT; 
+2025-03-05 16:37:59.6794 INFO Greeting message with ID 1 deleted successfully. 
+2025-03-05 16:37:59.6794 INFO Executing OkObjectResult, writing value of type 'ModelLayer.Model.ResponseModel`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2025-03-05 16:37:59.6794 INFO Executed action GreetingApp.Controllers.GreetingController.DeleteGreeting (GreetingApp) in 78.0599ms 
+2025-03-05 16:37:59.6794 INFO Executed endpoint 'GreetingApp.Controllers.GreetingController.DeleteGreeting (GreetingApp)' 
+2025-03-05 16:37:59.6794 INFO Request finished HTTP/1.1 DELETE https://localhost:7244/Greeting/deleteGreeting/1 - - - 200 - application/json;+charset=utf-8 84.0473ms 

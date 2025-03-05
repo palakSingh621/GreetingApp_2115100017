@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using RepositoryLayer.Entity; 
 using RepositoryLayer.Context;
 using RepositoryLayer.Interface;
+using Microsoft.EntityFrameworkCore;
 
 namespace RepositoryLayer.Service
 {
@@ -66,6 +67,17 @@ namespace RepositoryLayer.Service
             greeting.Message = newMessage;
             _context.SaveChanges();
             return true;
+        }
+        public bool DeleteGreeting(int id)
+        {
+            var greeting = _context.GreetingMessages.Find(id);
+            if (greeting != null)
+            {
+                _context.GreetingMessages.Remove(greeting);
+                _context.SaveChanges();
+                return true;
+            }
+            return false;
         }
     }
 }

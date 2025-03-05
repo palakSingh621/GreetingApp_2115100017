@@ -14,5 +14,6 @@ namespace BusinessLayer.Interface
         List<GreetingMessageEntity> GetAllGreetings();
         GreetingMessageEntity GetGreetingById(int id);
         bool UpdateGreeting(int id, string newMessage);
+        bool DeleteGreeting(int id);
     }
 }

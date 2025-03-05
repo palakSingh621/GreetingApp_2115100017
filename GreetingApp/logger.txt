@@ -294,3 +294,143 @@
 2025-03-04 09:04:22.3661 INFO Request finished HTTP/2 GET https://localhost:7244/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 77.2687ms 
 2025-03-04 09:04:22.4075 INFO Request starting HTTP/2 GET https://localhost:7244/Swagger/v1/swagger.json - - 
 2025-03-04 09:04:22.4075 INFO Request finished HTTP/2 GET https://localhost:7244/Swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 1.8346ms 
+2025-03-04 17:09:29.7186 INFO Application Starting... 
+2025-03-04 17:09:30.6033 INFO Entity Framework Core 6.0.36 initialized 'GreetingAppContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.36' with options: None 
+2025-03-04 17:09:41.9668 INFO Application Starting... 
+2025-03-04 17:09:42.9203 INFO Entity Framework Core 6.0.36 initialized 'GreetingAppContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.36' with options: None 
+2025-03-04 17:10:04.9674 INFO Application Starting... 
+2025-03-04 17:10:05.8997 INFO Entity Framework Core 6.0.36 initialized 'GreetingAppContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.36' with options: None 
+2025-03-04 17:10:07.0302 INFO Executed DbCommand (474ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+CREATE DATABASE [GreetingMessages]; 
+2025-03-04 17:10:07.2145 INFO Executed DbCommand (179ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5
+BEGIN
+    ALTER DATABASE [GreetingMessages] SET READ_COMMITTED_SNAPSHOT ON;
+END; 
+2025-03-04 17:10:07.2516 INFO Executed DbCommand (12ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1 
+2025-03-04 17:10:07.4101 INFO Executed DbCommand (18ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [__EFMigrationsHistory] (
+    [MigrationId] nvarchar(150) NOT NULL,
+    [ProductVersion] nvarchar(32) NOT NULL,
+    CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+); 
+2025-03-04 17:10:07.4130 INFO Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1 
+2025-03-04 17:10:07.4565 INFO Executed DbCommand (31ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]'); 
+2025-03-04 17:10:07.4937 INFO Executed DbCommand (33ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId]; 
+2025-03-04 17:10:07.5178 INFO Applying migration '20250304113943_InitialMigration'. 
+2025-03-04 17:10:07.5565 INFO Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [GreetingMessages] (
+    [Id] int NOT NULL IDENTITY,
+    [Message] nvarchar(max) NOT NULL,
+    CONSTRAINT [PK_GreetingMessages] PRIMARY KEY ([Id])
+); 
+2025-03-04 17:10:07.5819 INFO Executed DbCommand (24ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20250304113943_InitialMigration', N'6.0.36'); 
+2025-03-04 17:10:23.0232 INFO Application Starting... 
+2025-03-04 17:10:24.2092 INFO Now listening on: https://localhost:7244 
+2025-03-04 17:10:24.2092 INFO Now listening on: http://localhost:5113 
+2025-03-04 17:10:24.3296 INFO Application started. Press Ctrl+C to shut down. 
+2025-03-04 17:10:24.3296 INFO Hosting environment: Development 
+2025-03-04 17:10:24.3296 INFO Content root path: C:\Users\user\source\GreetingApp_2115100017\GreetingApp\ 
+2025-03-04 17:10:25.4597 INFO Request starting HTTP/2 GET https://localhost:7244/Swagger/index.html - - 
+2025-03-04 17:10:25.9954 INFO Request finished HTTP/2 GET https://localhost:7244/Swagger/index.html - - - 200 - text/html;charset=utf-8 539.2688ms 
+2025-03-04 17:10:26.0267 INFO Request starting HTTP/2 GET https://localhost:7244/_framework/aspnetcore-browser-refresh.js - - 
+2025-03-04 17:10:26.0267 INFO Request starting HTTP/2 GET https://localhost:7244/_vs/browserLink - - 
+2025-03-04 17:10:26.0267 INFO Request starting HTTP/2 GET https://localhost:7244/Swagger/index.js - - 
+2025-03-04 17:10:26.0267 INFO Request finished HTTP/2 GET https://localhost:7244/Swagger/index.js - - - 200 - application/javascript;charset=utf-8 3.4472ms 
+2025-03-04 17:10:26.0267 INFO Request finished HTTP/2 GET https://localhost:7244/_framework/aspnetcore-browser-refresh.js - - - 200 12354 application/javascript;+charset=utf-8 7.8614ms 
+2025-03-04 17:10:26.1238 INFO Request finished HTTP/2 GET https://localhost:7244/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 96.9320ms 
+2025-03-04 17:10:26.1736 INFO Request starting HTTP/2 GET https://localhost:7244/Swagger/v1/swagger.json - - 
+2025-03-04 17:10:26.1841 INFO Request finished HTTP/2 GET https://localhost:7244/Swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 10.5542ms 
+2025-03-04 17:11:11.0193 INFO Request starting HTTP/2 POST https://localhost:7244/Greeting/saveGreeting application/json 15 
+2025-03-04 17:11:11.0513 INFO Executing endpoint 'GreetingApp.Controllers.GreetingController.SaveGreeting (GreetingApp)' 
+2025-03-04 17:11:11.1079 INFO Route matched with {action = "SaveGreeting", controller = "Greeting"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult SaveGreeting(System.String) on controller GreetingApp.Controllers.GreetingController (GreetingApp). 
+2025-03-04 17:11:13.0713 INFO Entity Framework Core 6.0.36 initialized 'GreetingAppContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.36' with options: None 
+2025-03-04 17:11:14.5846 INFO Executed DbCommand (182ms) [Parameters=[@p0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [GreetingMessages] ([Message])
+VALUES (@p0);
+SELECT [Id]
+FROM [GreetingMessages]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity(); 
+2025-03-04 17:11:14.7298 INFO Executing OkObjectResult, writing value of type 'System.String'. 
+2025-03-04 17:11:14.7415 INFO Executed action GreetingApp.Controllers.GreetingController.SaveGreeting (GreetingApp) in 3623.9466ms 
+2025-03-04 17:11:14.7415 INFO Executed endpoint 'GreetingApp.Controllers.GreetingController.SaveGreeting (GreetingApp)' 
+2025-03-04 17:11:14.7544 INFO Request finished HTTP/2 POST https://localhost:7244/Greeting/saveGreeting application/json 15 - 200 - text/plain;+charset=utf-8 3735.0716ms 
+2025-03-04 17:11:24.5928 INFO Request starting HTTP/2 GET https://localhost:7244/Greeting/getAllGreetings - - 
+2025-03-04 17:11:24.5928 INFO Executing endpoint 'GreetingApp.Controllers.GreetingController.GetAllGreetings (GreetingApp)' 
+2025-03-04 17:11:24.5999 INFO Route matched with {action = "GetAllGreetings", controller = "Greeting"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllGreetings() on controller GreetingApp.Controllers.GreetingController (GreetingApp). 
+2025-03-04 17:11:24.6713 INFO Entity Framework Core 6.0.36 initialized 'GreetingAppContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.36' with options: None 
+2025-03-04 17:11:25.2040 INFO Executed DbCommand (14ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [g].[Id], [g].[Message]
+FROM [GreetingMessages] AS [g] 
+2025-03-04 17:11:25.2194 INFO Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[RepositoryLayer.Entity.GreetingMessageEntity, RepositoryLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'. 
+2025-03-04 17:11:25.2239 INFO Executed action GreetingApp.Controllers.GreetingController.GetAllGreetings (GreetingApp) in 623.3162ms 
+2025-03-04 17:11:25.2239 INFO Executed endpoint 'GreetingApp.Controllers.GreetingController.GetAllGreetings (GreetingApp)' 
+2025-03-04 17:11:25.2239 INFO Request finished HTTP/2 GET https://localhost:7244/Greeting/getAllGreetings - - - 200 - application/json;+charset=utf-8 633.1582ms 
+2025-03-05 12:20:51.5039 INFO Application Starting... 
+2025-03-05 12:20:52.5851 INFO Now listening on: https://localhost:7244 
+2025-03-05 12:20:52.5851 INFO Now listening on: http://localhost:5113 
+2025-03-05 12:20:52.6612 INFO Application started. Press Ctrl+C to shut down. 
+2025-03-05 12:20:52.6612 INFO Hosting environment: Development 
+2025-03-05 12:20:52.6612 INFO Content root path: C:\Users\user\source\GreetingApp_2115100017\GreetingApp\ 
+2025-03-05 12:20:53.5428 INFO Request starting HTTP/2 GET https://localhost:7244/Swagger/index.html - - 
+2025-03-05 12:20:54.0334 INFO Request finished HTTP/2 GET https://localhost:7244/Swagger/index.html - - - 200 - text/html;charset=utf-8 494.8359ms 
+2025-03-05 12:20:54.0577 INFO Request starting HTTP/2 GET https://localhost:7244/_framework/aspnetcore-browser-refresh.js - - 
+2025-03-05 12:20:54.0577 INFO Request starting HTTP/2 GET https://localhost:7244/Swagger/index.css - - 
+2025-03-05 12:20:54.0577 INFO Request starting HTTP/2 GET https://localhost:7244/Swagger/swagger-ui-bundle.js - - 
+2025-03-05 12:20:54.0577 INFO Request starting HTTP/2 GET https://localhost:7244/Swagger/swagger-ui-standalone-preset.js - - 
+2025-03-05 12:20:54.0577 INFO Request starting HTTP/2 GET https://localhost:7244/Swagger/swagger-ui.css - - 
+2025-03-05 12:20:54.0577 INFO Request starting HTTP/2 GET https://localhost:7244/Swagger/index.js - - 
+2025-03-05 12:20:54.0577 INFO Request finished HTTP/2 GET https://localhost:7244/Swagger/index.js - - - 200 - application/javascript;charset=utf-8 2.6192ms 
+2025-03-05 12:20:54.0577 INFO Request finished HTTP/2 GET https://localhost:7244/_framework/aspnetcore-browser-refresh.js - - - 200 12354 application/javascript;+charset=utf-8 8.5821ms 
+2025-03-05 12:20:54.0711 INFO The file /index.css was not modified 
+2025-03-05 12:20:54.0711 INFO The file /swagger-ui-standalone-preset.js was not modified 
+2025-03-05 12:20:54.0711 INFO The file /swagger-ui-bundle.js was not modified 
+2025-03-05 12:20:54.0711 INFO The file /swagger-ui.css was not modified 
+2025-03-05 12:20:54.0711 INFO Request finished HTTP/2 GET https://localhost:7244/Swagger/swagger-ui.css - - - 304 - text/css 14.2089ms 
+2025-03-05 12:20:54.0711 INFO Request finished HTTP/2 GET https://localhost:7244/Swagger/index.css - - - 304 - text/css 14.2633ms 
+2025-03-05 12:20:54.0711 INFO Request finished HTTP/2 GET https://localhost:7244/Swagger/swagger-ui-standalone-preset.js - - - 304 - application/javascript 14.0105ms 
+2025-03-05 12:20:54.0711 INFO Request finished HTTP/2 GET https://localhost:7244/Swagger/swagger-ui-bundle.js - - - 304 - application/javascript 14.2108ms 
+2025-03-05 12:20:54.0711 INFO Request starting HTTP/2 GET https://localhost:7244/_vs/browserLink - - 
+2025-03-05 12:20:54.1803 INFO Request finished HTTP/2 GET https://localhost:7244/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 99.3145ms 
+2025-03-05 12:20:54.2281 INFO Request starting HTTP/2 GET https://localhost:7244/Swagger/v1/swagger.json - - 
+2025-03-05 12:20:54.2281 INFO Request finished HTTP/2 GET https://localhost:7244/Swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 8.4270ms 
+2025-03-05 12:25:26.3792 INFO Request starting HTTP/2 POST https://localhost:7244/Greeting/saveGreeting application/json 10 
+2025-03-05 12:25:26.4012 INFO Executing endpoint 'GreetingApp.Controllers.GreetingController.SaveGreeting (GreetingApp)' 
+2025-03-05 12:25:26.4567 INFO Route matched with {action = "SaveGreeting", controller = "Greeting"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult SaveGreeting(System.String) on controller GreetingApp.Controllers.GreetingController (GreetingApp). 
+2025-03-05 12:25:28.6892 INFO Entity Framework Core 6.0.36 initialized 'GreetingAppContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.36' with options: None 
+2025-03-05 12:25:29.9889 INFO Executed DbCommand (143ms) [Parameters=[@p0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [GreetingMessages] ([Message])
+VALUES (@p0);
+SELECT [Id]
+FROM [GreetingMessages]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity(); 
+2025-03-05 12:25:30.1404 INFO Taking the Greetings Message to save. 
+2025-03-05 12:25:30.1509 INFO Executing OkObjectResult, writing value of type 'ModelLayer.Model.ResponseModel`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2025-03-05 12:25:30.1608 INFO Executed action GreetingApp.Controllers.GreetingController.SaveGreeting (GreetingApp) in 3697.3013ms 
+2025-03-05 12:25:30.1608 INFO Executed endpoint 'GreetingApp.Controllers.GreetingController.SaveGreeting (GreetingApp)' 
+2025-03-05 12:25:30.1608 INFO Request finished HTTP/2 POST https://localhost:7244/Greeting/saveGreeting application/json 10 - 200 - application/json;+charset=utf-8 3796.8858ms 
+2025-03-05 12:25:37.8350 INFO Request starting HTTP/2 GET https://localhost:7244/Greeting/getAllGreetings - - 
+2025-03-05 12:25:37.8350 INFO Executing endpoint 'GreetingApp.Controllers.GreetingController.GetAllGreetings (GreetingApp)' 
+2025-03-05 12:25:37.8535 INFO Route matched with {action = "GetAllGreetings", controller = "Greeting"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllGreetings() on controller GreetingApp.Controllers.GreetingController (GreetingApp). 
+2025-03-05 12:25:37.9257 INFO Entity Framework Core 6.0.36 initialized 'GreetingAppContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.36' with options: None 
+2025-03-05 12:25:38.4440 INFO Executed DbCommand (13ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [g].[Id], [g].[Message]
+FROM [GreetingMessages] AS [g] 
+2025-03-05 12:25:38.4699 INFO Fetching Greetings Messages... 
+2025-03-05 12:25:38.4699 INFO Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [g].[Id], [g].[Message]
+FROM [GreetingMessages] AS [g] 
+2025-03-05 12:25:38.4758 INFO Executing OkObjectResult, writing value of type 'ModelLayer.Model.ResponseModel`1[[System.Collections.Generic.List`1[[RepositoryLayer.Entity.GreetingMessageEntity, RepositoryLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2025-03-05 12:25:38.4758 INFO Executed action GreetingApp.Controllers.GreetingController.GetAllGreetings (GreetingApp) in 626.6292ms 
+2025-03-05 12:25:38.4758 INFO Executed endpoint 'GreetingApp.Controllers.GreetingController.GetAllGreetings (GreetingApp)' 
+2025-03-05 12:25:38.4758 INFO Request finished HTTP/2 GET https://localhost:7244/Greeting/getAllGreetings - - - 200 - application/json;+charset=utf-8 647.8988ms 

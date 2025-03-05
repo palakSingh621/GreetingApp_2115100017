@@ -3,12 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore.Metadata;
+using RepositoryLayer.Entity; 
+using RepositoryLayer.Context;
 using RepositoryLayer.Interface;
 
 namespace RepositoryLayer.Service
 {
     public class GreetingRL : IGreetingRL
     {
+        private readonly GreetingAppContext _context;
+
+        public GreetingRL(GreetingAppContext context)
+        {
+            _context = context;
+        }
+
         public string GetGreetingsRL(string firstName, string lastName)
         {
             if (!string.IsNullOrEmpty(firstName) && !string.IsNullOrEmpty(lastName))
@@ -27,6 +37,17 @@ namespace RepositoryLayer.Service
             {
                 return "Hello, World!";
             }
+        }
+        public void SaveGreeting(string message)
+        {
+            var greeting = new GreetingMessageEntity { Message = message };
+            _context.GreetingMessages.Add(greeting);
+            _context.SaveChanges();
+        }
+
+        public List<GreetingMessageEntity> GetAllGreetings()
+        {
+            return _context.GreetingMessages.ToList();
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using BusinessLayer.Interface;
 using Microsoft.AspNetCore.Mvc;
 using ModelLayer.Model;
+using RepositoryLayer.Entity;
 namespace GreetingApp.Controllers
 {
     /// <summary>
@@ -121,7 +122,7 @@ namespace GreetingApp.Controllers
         [HttpGet]
         public IActionResult GetGreeting(string firstName, string LastName)
         {
-            _logger.LogInformation("Printing Hello to the User from Services Layers.");
+            _logger.LogInformation("Printing Hello to the User fromervices Layers.");
             ResponseModel<string> response = new ResponseModel<string>
             {
                 Success = true,
@@ -130,6 +131,39 @@ namespace GreetingApp.Controllers
             };
             return Ok(response);
         }
+        //UC4
+        /// <summary>
+        /// Save Greeting Message
+        /// </summary>
+        [HttpPost("saveGreeting")]
+        public IActionResult SaveGreeting([FromBody] string message)
+        {
+            _greetingBL.SaveGreeting(message);
+            _logger.LogInformation("Taking the Greetings Message to save.");
+            ResponseModel<string> response = new ResponseModel<string>
+            {
+                Success = true,
+                Message = "Greeting saved successfully",
+                Data = $"Saved Message: {message}"
+            };
+            return Ok(response);
+        }
 
+        /// <summary>
+        /// Retrieve All Greetings
+        /// </summary>
+        [HttpGet("getAllGreetings")]
+        public IActionResult GetAllGreetings()
+        {
+            var greetings = _greetingBL.GetAllGreetings();
+            _logger.LogInformation("Fetching Greetings Messages...");
+            ResponseModel<List<GreetingMessageEntity>> response = new ResponseModel<List<GreetingMessageEntity>>
+            {
+                Success = true,
+                Message = "Greeting Messages Fetched!!",
+                Data = _greetingBL.GetAllGreetings()
+            };
+            return Ok(response);
+        }
     }
 }

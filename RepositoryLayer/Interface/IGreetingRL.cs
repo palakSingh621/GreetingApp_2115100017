@@ -13,5 +13,6 @@ namespace RepositoryLayer.Interface
         string GetGreetingsRL(string firstName, string lastName);
         void SaveGreeting(string message);
         List<GreetingMessageEntity> GetAllGreetings();
+        bool UpdateGreeting(int id, string newMessage);
     }
 }

@@ -120,7 +120,7 @@ namespace GreetingApp.Controllers
         /// Get Method to print Hello World
         /// </summary>
         [HttpGet]
-        public IActionResult GetGreeting(string firstName, string LastName)
+        public IActionResult GetGreetingForName(string firstName, string LastName)
         {
             _logger.LogInformation("Printing Hello to the User fromervices Layers.");
             ResponseModel<string> response = new ResponseModel<string>
@@ -135,7 +135,8 @@ namespace GreetingApp.Controllers
         /// <summary>
         /// Save Greeting Message
         /// </summary>
-        [HttpPost("saveGreeting")]
+        [HttpPost]
+        [Route("saveGreeting")]
         public IActionResult SaveGreeting([FromBody] string message)
         {
             _greetingBL.SaveGreeting(message);
@@ -154,7 +155,8 @@ namespace GreetingApp.Controllers
         /// Getting Greeting By ID
         /// </summary>
         /// </summary>
-        [HttpGet("getGreetingById/{id}")]
+        [HttpGet]
+        [Route("getGreetingById/{id}")]
         public IActionResult GetGreetingById(int id)
         {
             _logger.LogInformation($"Getting Greeting message by Id: {id}");
@@ -175,7 +177,8 @@ namespace GreetingApp.Controllers
         /// <summary>
         /// Retrieve All Greetings
         /// </summary>
-        [HttpGet("getAllGreetings")]
+        [HttpGet]
+        [Route("getAllGreetings")]
         public IActionResult GetAllGreetings()
         {
             _logger.LogInformation("Fetching Greetings Messages...");
@@ -192,5 +195,28 @@ namespace GreetingApp.Controllers
              response.Data = _greetingBL.GetAllGreetings();
             return Ok(response);
         }
+        //UC7
+        /// <summary>
+        /// Update Greeting Message By id
+        /// </summary>
+        [HttpPut]
+        [Route("updateGreeting/{id}")]
+        public IActionResult UpdateGreeting(int id, [FromBody]string newMessage)
+        {
+            _logger.LogInformation($"Updating Greeting By id: {id}");
+            ResponseModel<String> response = new ResponseModel<String>();
+            bool isUpdated=_greetingBL.UpdateGreeting(id, newMessage);
+            if(!isUpdated)
+            {
+                response.Success = false;
+                response.Message = $"Greeting with ID {id} not found.";
+                return NotFound(response);
+            }
+            response.Success = true;
+            response.Message = $"Greeting with ID {id} updated successfully.";
+            response.Data= newMessage;
+            return Ok(response);
+        }
+
     }
 }

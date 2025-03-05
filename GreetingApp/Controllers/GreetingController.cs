@@ -149,22 +149,11 @@ namespace GreetingApp.Controllers
             return Ok(response);
         }
 
+        //UC5
         /// <summary>
-        /// Retrieve All Greetings
+        /// Getting Greeting By ID
         /// </summary>
-        [HttpGet("getAllGreetings")]
-        public IActionResult GetAllGreetings()
-        {
-            var greetings = _greetingBL.GetAllGreetings();
-            _logger.LogInformation("Fetching Greetings Messages...");
-            ResponseModel<List<GreetingMessageEntity>> response = new ResponseModel<List<GreetingMessageEntity>>
-            {
-                Success = true,
-                Message = "Greeting Messages Fetched!!",
-                Data = _greetingBL.GetAllGreetings()
-            };
-            return Ok(response);
-        }
+        /// </summary>
         [HttpGet("getGreetingById/{id}")]
         public IActionResult GetGreetingById(int id)
         {
@@ -180,6 +169,27 @@ namespace GreetingApp.Controllers
             response.Success = true;
             response.Message = $"Greeting with ID {id} found.";
             response.Data = greeting;
+            return Ok(response);
+        }
+        //UC6
+        /// <summary>
+        /// Retrieve All Greetings
+        /// </summary>
+        [HttpGet("getAllGreetings")]
+        public IActionResult GetAllGreetings()
+        {
+            _logger.LogInformation("Fetching Greetings Messages...");
+            var greetings = _greetingBL.GetAllGreetings();
+            ResponseModel<List<GreetingMessageEntity>> response = new ResponseModel<List<GreetingMessageEntity>>();
+            if (greetings == null || greetings.Count == 0)
+            {
+                response.Success = false;
+                response.Message = "No Greeting Messages Found";
+                return NotFound("No greetings found.");
+            }
+             response.Success = true;
+             response.Message = "Greeting Messages Fetched!!";
+             response.Data = _greetingBL.GetAllGreetings();
             return Ok(response);
         }
     }

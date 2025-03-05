@@ -38,6 +38,12 @@ namespace RepositoryLayer.Service
                 return "Hello, World!";
             }
         }
+
+        public GreetingMessageEntity GetGreetingById(int id)
+        {
+            return _context.GreetingMessages.FirstOrDefault(g => g.Id == id);
+        }
+
         public void SaveGreeting(string message)
         {
             var greeting = new GreetingMessageEntity { Message = message };

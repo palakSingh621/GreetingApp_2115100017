@@ -165,5 +165,22 @@ namespace GreetingApp.Controllers
             };
             return Ok(response);
         }
+        [HttpGet("getGreetingById/{id}")]
+        public IActionResult GetGreetingById(int id)
+        {
+            _logger.LogInformation($"Getting Greeting message by Id: {id}");
+            var greeting = _greetingBL.GetGreetingById(id);
+            ResponseModel<GreetingMessageEntity> response = new ResponseModel<GreetingMessageEntity>();
+            if (greeting == null)
+            {
+                response.Success = false;
+                response.Message = $"Greeting with ID {id} not found.";
+                return NotFound(response);
+            }
+            response.Success = true;
+            response.Message = $"Greeting with ID {id} found.";
+            response.Data = greeting;
+            return Ok(response);
+        }
     }
 }

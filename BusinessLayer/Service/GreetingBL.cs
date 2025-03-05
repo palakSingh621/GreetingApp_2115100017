@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using BusinessLayer.Interface;
 using RepositoryLayer.Interface;
+using RepositoryLayer.Entity;
 
 namespace BusinessLayer.Service
 {
@@ -18,6 +19,15 @@ namespace BusinessLayer.Service
         public string GetGreetingsBL(string firstName, string lastName)
         {
             return _greetingRL.GetGreetingsRL(firstName,lastName);
+        }
+        public void SaveGreeting(string message)
+        {
+            _greetingRL.SaveGreeting(message);
+        }
+
+        public List<GreetingMessageEntity> GetAllGreetings()
+        {
+            return _greetingRL.GetAllGreetings();
         }
     }
 }

@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelLayer", "ModelLayer\Mo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Middleware", "Middleware\Middleware.csproj", "{630DE805-BFCB-4F69-B547-12C05C4B6857}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CacheLayer", "CacheLayer\CacheLayer.csproj", "{30F5AFB5-4CAD-4E0A-A18A-32A7ADB201AB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{630DE805-BFCB-4F69-B547-12C05C4B6857}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{630DE805-BFCB-4F69-B547-12C05C4B6857}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{630DE805-BFCB-4F69-B547-12C05C4B6857}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30F5AFB5-4CAD-4E0A-A18A-32A7ADB201AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30F5AFB5-4CAD-4E0A-A18A-32A7ADB201AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30F5AFB5-4CAD-4E0A-A18A-32A7ADB201AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30F5AFB5-4CAD-4E0A-A18A-32A7ADB201AB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

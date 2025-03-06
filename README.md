@@ -17,3 +17,5 @@
 **UC7:** Ability for the Greeting App to Edit a Greeting Messages in the Repository
 
 **UC8:** Ability for the Greeting App to delete a Greeting Messages in the Repository
+
+**UC9:** Apply Swagger and global exception in the project.

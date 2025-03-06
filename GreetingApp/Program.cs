@@ -6,6 +6,7 @@ using RepositoryLayer.Context;
 using NLog;
 using NLog.Web;
 using Microsoft.EntityFrameworkCore;
+using Middleware.GlobalExceptionHandler;
 var builder = WebApplication.CreateBuilder(args);
 var logger = LogManager.Setup().LoadConfigurationFromAppSettings().GetCurrentClassLogger();
 logger.Info("Application Starting...");
@@ -13,7 +14,10 @@ var connectionString = builder.Configuration.GetConnectionString("SqlConnection"
 builder.Services.AddDbContext<GreetingAppContext>(options => options.UseSqlServer(connectionString));
 // Add services to the container.
 
-builder.Services.AddControllers();
+builder.Services.AddControllers(options =>
+{
+    options.Filters.Add<GlobalExceptionFilter>(); // Register the global exception filter
+});
 builder.Services.AddScoped<IGreetingBL, GreetingBL>();
 builder.Services.AddScoped<IGreetingRL, GreetingRL>();
 

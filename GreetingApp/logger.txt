@@ -827,3 +827,101 @@ SELECT @@ROWCOUNT;
 2025-03-05 16:37:59.6794 INFO Executed action GreetingApp.Controllers.GreetingController.DeleteGreeting (GreetingApp) in 78.0599ms 
 2025-03-05 16:37:59.6794 INFO Executed endpoint 'GreetingApp.Controllers.GreetingController.DeleteGreeting (GreetingApp)' 
 2025-03-05 16:37:59.6794 INFO Request finished HTTP/1.1 DELETE https://localhost:7244/Greeting/deleteGreeting/1 - - - 200 - application/json;+charset=utf-8 84.0473ms 
+2025-03-06 11:49:37.4359 INFO Application Starting... 
+2025-03-06 11:49:38.7054 INFO Now listening on: https://localhost:7244 
+2025-03-06 11:49:38.7160 INFO Now listening on: http://localhost:5113 
+2025-03-06 11:49:38.7986 INFO Application started. Press Ctrl+C to shut down. 
+2025-03-06 11:49:38.7986 INFO Hosting environment: Development 
+2025-03-06 11:49:38.7986 INFO Content root path: C:\Users\user\source\GreetingApp_2115100017\GreetingApp\ 
+2025-03-06 11:49:40.7680 INFO Request starting HTTP/2 GET https://localhost:7244/Swagger/index.html - - 
+2025-03-06 11:49:41.5859 INFO Request finished HTTP/2 GET https://localhost:7244/Swagger/index.html - - - 200 - text/html;charset=utf-8 826.6493ms 
+2025-03-06 11:49:41.5859 INFO Request starting HTTP/2 GET https://localhost:7244/Swagger/index.css - - 
+2025-03-06 11:49:41.5859 INFO Request starting HTTP/2 GET https://localhost:7244/Swagger/swagger-ui.css - - 
+2025-03-06 11:49:41.6187 INFO Request starting HTTP/2 GET https://localhost:7244/Swagger/swagger-ui-standalone-preset.js - - 
+2025-03-06 11:49:41.6187 INFO Request starting HTTP/2 GET https://localhost:7244/Swagger/swagger-ui-bundle.js - - 
+2025-03-06 11:49:41.6336 INFO Request starting HTTP/2 GET https://localhost:7244/_framework/aspnetcore-browser-refresh.js - - 
+2025-03-06 11:49:41.6336 INFO Request starting HTTP/2 GET https://localhost:7244/Swagger/index.js - - 
+2025-03-06 11:49:41.6550 INFO Request finished HTTP/2 GET https://localhost:7244/Swagger/index.js - - - 200 - application/javascript;charset=utf-8 17.0368ms 
+2025-03-06 11:49:41.6805 INFO Request finished HTTP/2 GET https://localhost:7244/_framework/aspnetcore-browser-refresh.js - - - 200 12354 application/javascript;+charset=utf-8 48.8023ms 
+2025-03-06 11:49:41.6805 INFO The file /swagger-ui.css was not modified 
+2025-03-06 11:49:41.6805 INFO The file /swagger-ui-standalone-preset.js was not modified 
+2025-03-06 11:49:41.6805 INFO The file /swagger-ui-bundle.js was not modified 
+2025-03-06 11:49:41.6921 INFO The file /index.css was not modified 
+2025-03-06 11:49:41.6921 INFO Request finished HTTP/2 GET https://localhost:7244/Swagger/swagger-ui-standalone-preset.js - - - 304 - application/javascript 74.3200ms 
+2025-03-06 11:49:41.6921 INFO Request finished HTTP/2 GET https://localhost:7244/Swagger/swagger-ui.css - - - 304 - text/css 98.6799ms 
+2025-03-06 11:49:41.6921 INFO Request finished HTTP/2 GET https://localhost:7244/Swagger/swagger-ui-bundle.js - - - 304 - application/javascript 69.5490ms 
+2025-03-06 11:49:41.6921 INFO Request finished HTTP/2 GET https://localhost:7244/Swagger/index.css - - - 304 - text/css 99.0300ms 
+2025-03-06 11:49:41.7257 INFO Request starting HTTP/2 GET https://localhost:7244/_vs/browserLink - - 
+2025-03-06 11:49:41.9465 INFO Request finished HTTP/2 GET https://localhost:7244/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 221.1579ms 
+2025-03-06 11:49:42.1193 INFO Request starting HTTP/2 GET https://localhost:7244/Swagger/v1/swagger.json - - 
+2025-03-06 11:49:42.1402 INFO Request finished HTTP/2 GET https://localhost:7244/Swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 21.0097ms 
+2025-03-06 11:50:06.8906 INFO Request starting HTTP/2 GET https://localhost:7244/Greeting/getGreetingById/2 - - 
+2025-03-06 11:50:06.9395 INFO Executing endpoint 'GreetingApp.Controllers.GreetingController.GetGreetingById (GreetingApp)' 
+2025-03-06 11:50:07.0260 INFO Route matched with {action = "GetGreetingById", controller = "Greeting"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetGreetingById(Int32) on controller GreetingApp.Controllers.GreetingController (GreetingApp). 
+2025-03-06 11:50:08.6246 INFO Entity Framework Core 6.0.36 initialized 'GreetingAppContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.36' with options: None 
+2025-03-06 11:50:10.7244 INFO Executed DbCommand (173ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [g].[Id], [g].[Message]
+FROM [GreetingMessages] AS [g]
+WHERE [g].[Id] = @__id_0 
+2025-03-06 11:50:10.8780 INFO Executing OkObjectResult, writing value of type 'ModelLayer.Model.ResponseModel`1[[RepositoryLayer.Entity.GreetingMessageEntity, RepositoryLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'. 
+2025-03-06 11:50:10.8900 INFO Executed action GreetingApp.Controllers.GreetingController.GetGreetingById (GreetingApp) in 3857.8385ms 
+2025-03-06 11:50:10.8900 INFO Executed endpoint 'GreetingApp.Controllers.GreetingController.GetGreetingById (GreetingApp)' 
+2025-03-06 11:50:10.9050 INFO Request finished HTTP/2 GET https://localhost:7244/Greeting/getGreetingById/2 - - - 200 - application/json;+charset=utf-8 4014.3738ms 
+2025-03-06 12:00:45.8411 INFO Application Starting... 
+2025-03-06 12:00:47.0582 INFO Now listening on: https://localhost:7244 
+2025-03-06 12:00:47.0734 INFO Now listening on: http://localhost:5113 
+2025-03-06 12:00:47.1661 INFO Application started. Press Ctrl+C to shut down. 
+2025-03-06 12:00:47.1661 INFO Hosting environment: Development 
+2025-03-06 12:00:47.1661 INFO Content root path: C:\Users\user\source\GreetingApp_2115100017\GreetingApp\ 
+2025-03-06 12:00:49.0153 INFO Request starting HTTP/2 GET https://localhost:7244/Swagger/index.html - - 
+2025-03-06 12:00:49.9955 INFO Request finished HTTP/2 GET https://localhost:7244/Swagger/index.html - - - 200 - text/html;charset=utf-8 983.9948ms 
+2025-03-06 12:00:50.0145 INFO Request starting HTTP/2 GET https://localhost:7244/_framework/aspnetcore-browser-refresh.js - - 
+2025-03-06 12:00:50.0145 INFO Request starting HTTP/2 GET https://localhost:7244/Swagger/index.js - - 
+2025-03-06 12:00:50.0145 INFO Request starting HTTP/2 GET https://localhost:7244/_vs/browserLink - - 
+2025-03-06 12:00:50.0145 INFO Request finished HTTP/2 GET https://localhost:7244/Swagger/index.js - - - 200 - application/javascript;charset=utf-8 3.4380ms 
+2025-03-06 12:00:50.0257 INFO Request finished HTTP/2 GET https://localhost:7244/_framework/aspnetcore-browser-refresh.js - - - 200 12354 application/javascript;+charset=utf-8 11.1391ms 
+2025-03-06 12:00:50.1007 INFO Request finished HTTP/2 GET https://localhost:7244/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 83.1164ms 
+2025-03-06 12:00:50.3952 INFO Request starting HTTP/2 GET https://localhost:7244/Swagger/v1/swagger.json - - 
+2025-03-06 12:00:50.3952 INFO Request finished HTTP/2 GET https://localhost:7244/Swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 14.0236ms 
+2025-03-06 12:01:06.8435 INFO Request starting HTTP/2 DELETE https://localhost:7244/Greeting/deleteGreeting/5 - - 
+2025-03-06 12:01:06.8646 INFO Executing endpoint 'GreetingApp.Controllers.GreetingController.DeleteGreeting (GreetingApp)' 
+2025-03-06 12:01:06.9313 INFO Route matched with {action = "DeleteGreeting", controller = "Greeting"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult DeleteGreeting(Int32) on controller GreetingApp.Controllers.GreetingController (GreetingApp). 
+2025-03-06 12:01:07.4688 INFO Attempting to delete greeting with ID: 5 
+2025-03-06 12:01:08.8005 INFO Entity Framework Core 6.0.36 initialized 'GreetingAppContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.36' with options: None 
+2025-03-06 12:01:10.6833 INFO Executed DbCommand (120ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [g].[Id], [g].[Message]
+FROM [GreetingMessages] AS [g]
+WHERE [g].[Id] = @__p_0 
+2025-03-06 12:01:10.7285 WARN Greeting message with ID 5 not found. 
+2025-03-06 12:01:10.7402 INFO Executing NotFoundObjectResult, writing value of type 'ModelLayer.Model.ResponseModel`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2025-03-06 12:01:10.7552 INFO Executed action GreetingApp.Controllers.GreetingController.DeleteGreeting (GreetingApp) in 3815.6628ms 
+2025-03-06 12:01:10.7552 INFO Executed endpoint 'GreetingApp.Controllers.GreetingController.DeleteGreeting (GreetingApp)' 
+2025-03-06 12:01:10.7754 INFO Request finished HTTP/2 DELETE https://localhost:7244/Greeting/deleteGreeting/5 - - - 404 - application/json;+charset=utf-8 3931.9192ms 
+2025-03-06 12:03:19.4204 INFO Application Starting... 
+2025-03-06 12:03:20.5389 INFO Now listening on: https://localhost:7244 
+2025-03-06 12:03:20.5533 INFO Now listening on: http://localhost:5113 
+2025-03-06 12:03:20.6322 INFO Application started. Press Ctrl+C to shut down. 
+2025-03-06 12:03:20.6322 INFO Hosting environment: Development 
+2025-03-06 12:03:20.6322 INFO Content root path: C:\Users\user\source\GreetingApp_2115100017\GreetingApp\ 
+2025-03-06 12:03:24.4023 INFO Request starting HTTP/2 GET https://localhost:7244/_framework/aspnetcore-browser-refresh.js - - 
+2025-03-06 12:03:24.4023 INFO Request starting HTTP/2 GET https://localhost:7244/Swagger/index.html - - 
+2025-03-06 12:03:24.5302 INFO Request finished HTTP/2 GET https://localhost:7244/_framework/aspnetcore-browser-refresh.js - - - 200 12354 application/javascript;+charset=utf-8 131.0999ms 
+2025-03-06 12:03:24.6666 INFO Request starting HTTP/2 GET https://localhost:7244/Swagger/v1/swagger.json - - 
+2025-03-06 12:03:24.7850 INFO Request finished HTTP/2 GET https://localhost:7244/Swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 118.3535ms 
+2025-03-06 12:03:24.9638 INFO Request finished HTTP/2 GET https://localhost:7244/Swagger/index.html - - - 200 - text/html;charset=utf-8 565.3912ms 
+2025-03-06 12:03:25.1608 INFO Request starting HTTP/2 GET https://localhost:7244/_framework/aspnetcore-browser-refresh.js - - 
+2025-03-06 12:03:25.1608 INFO Request starting HTTP/2 GET https://localhost:7244/Swagger/index.js - - 
+2025-03-06 12:03:25.1608 INFO Request finished HTTP/2 GET https://localhost:7244/_framework/aspnetcore-browser-refresh.js - - - 200 12354 application/javascript;+charset=utf-8 1.4553ms 
+2025-03-06 12:03:25.1608 INFO Request finished HTTP/2 GET https://localhost:7244/Swagger/index.js - - - 200 - application/javascript;charset=utf-8 1.7700ms 
+2025-03-06 12:03:25.1768 INFO Request starting HTTP/2 GET https://localhost:7244/_vs/browserLink - - 
+2025-03-06 12:03:25.2762 INFO Request finished HTTP/2 GET https://localhost:7244/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 99.4251ms 
+2025-03-06 12:03:25.5763 INFO Request starting HTTP/2 GET https://localhost:7244/Swagger/v1/swagger.json - - 
+2025-03-06 12:03:25.5955 INFO Request finished HTTP/2 GET https://localhost:7244/Swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 19.1723ms 
+2025-03-06 12:03:34.7949 INFO Request starting HTTP/2 GET https://localhost:7244/Greeting/Get - - 
+2025-03-06 12:03:34.8087 INFO Executing endpoint 'GreetingApp.Controllers.GreetingController.Get (GreetingApp)' 
+2025-03-06 12:03:34.8517 INFO Route matched with {action = "Get", controller = "Greeting"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller GreetingApp.Controllers.GreetingController (GreetingApp). 
+2025-03-06 12:03:35.1774 INFO API Endpoint Hit 
+2025-03-06 12:03:35.1970 INFO Executing OkObjectResult, writing value of type 'ModelLayer.Model.ResponseModel`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2025-03-06 12:03:35.2148 INFO Executed action GreetingApp.Controllers.GreetingController.Get (GreetingApp) in 353.749ms 
+2025-03-06 12:03:35.2148 INFO Executed endpoint 'GreetingApp.Controllers.GreetingController.Get (GreetingApp)' 
+2025-03-06 12:03:35.2259 INFO Request finished HTTP/2 GET https://localhost:7244/Greeting/Get - - - 200 - application/json;+charset=utf-8 431.1773ms 

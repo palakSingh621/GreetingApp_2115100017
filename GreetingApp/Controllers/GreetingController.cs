@@ -1,5 +1,4 @@
 ﻿using BusinessLayer.Interface;
-using CacheLayer.Interface;
 using Microsoft.AspNetCore.Mvc;
 using ModelLayer.Model;
 using RepositoryLayer.Entity;
@@ -14,127 +13,125 @@ namespace GreetingApp.Controllers
     {
         private readonly ILogger<GreetingController> _logger;
         private readonly IGreetingBL _greetingBL;
-        private readonly IRedisCacheService _redisCacheService;
         private static Dictionary<string, string> greetings = new Dictionary<string, string>();
-        public GreetingController(ILogger<GreetingController> logger, IGreetingBL greetingBL, IRedisCacheService redisCacheService)
+        public GreetingController(ILogger<GreetingController> logger, IGreetingBL greetingBL)
         {
             _logger = logger;
             _greetingBL = greetingBL;
-            _redisCacheService = redisCacheService;
         }
-        ////UC1
-        ///// <summary>
-        ///// Get method to get the greeting message
-        ///// </summary>
-        //[HttpGet]
-        //[Route("Get")]
-        //public IActionResult Get()
-        //{
-        //    try
-        //    {
-        //        _logger.LogInformation("API Endpoint Hit");
-        //        return Ok(new ResponseModel<string> { Success = true, Message = "API Endpoint Hit", Data = "Hello, World!" });
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        _logger.LogError(ex, "Error in Get method");
-        //        return StatusCode(500, "Internal Server Error");
-        //    }
-        //}
-        ///// <summary>
-        ///// Post Method to send the greeting message
-        ///// </summary>
-        //[HttpPost]
-        //public IActionResult Post(RequestModel requestModel)
-        //{
-        //    try
-        //    {
-        //        greetings[requestModel.key] = requestModel.value;
-        //        _logger.LogInformation("Request Received Successfully!");
-        //        return Ok(new ResponseModel<string> { Success = true, Message = "Request Received Successfully!", Data = $"Key: {requestModel.key}, Value: {requestModel.value}" });
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        _logger.LogError(ex, "Error in Post method");
-        //        return StatusCode(500, "Internal Server Error");
-        //    }
-        //}
-        ///// <summary>
-        ///// Put method to update an existing greeting
-        ///// </summary>
-        //[HttpPut]
-        //public IActionResult Put(RequestModel requestModel)
-        //{
-        //    try
-        //    {
-        //        if (greetings.ContainsKey(requestModel.key))
-        //        {
-        //            greetings[requestModel.key] = requestModel.value;
-        //            _logger.LogInformation("Greeting Updated Successfully!");
-        //            return Ok(new ResponseModel<string> { Success = true, Message = "Greeting Updated Successfully!", Data = requestModel.value });
-        //        }
-        //        return NotFound(new ResponseModel<string> { Success = false, Message = "Key not found!" });
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        _logger.LogError(ex, "Error in Put method");
-        //        return StatusCode(500, "Internal Server Error");
-        //    }
-        //}
-        ///// <summary>
-        ///// Delete method to remove a greeting
-        ///// </summary>
-        //[HttpDelete("{key}")]
-        //public IActionResult Delete(string key)
-        //{
-        //    try
-        //    {
-        //        if (greetings.ContainsKey(key))
-        //        {
-        //            greetings.Remove(key);
-        //            _logger.LogInformation("Greeting Deleted Successfully!");
-        //            return Ok(new ResponseModel<string> { Success = true, Message = "Greeting Deleted Successfully!", Data = key });
-        //        }
-        //        return NotFound(new ResponseModel<string> { Success = false, Message = "Key not found!" });
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        _logger.LogError(ex, "Error in Delete method");
-        //        return StatusCode(500, "Internal Server Error");
-        //    }
-        //}
-        ///// <summary>
-        ///// Patch method to Appending part of a greeting
-        ///// </summary>
-        //[HttpPatch]
-        //public IActionResult Patch(RequestModel requestModel)
-        //{
-        //    try
-        //    {
-        //        if (greetings.ContainsKey(requestModel.key))
-        //        {
-        //            greetings[requestModel.key] = $"{greetings[requestModel.key]} {requestModel.value}";
+        //UC1
+        /// <summary>
+        /// Get method to get the greeting message
+        /// </summary>
+        [HttpGet]
+        [Route("Get")]
+        public IActionResult Get()
+        {
+            try
+            {
+                _logger.LogInformation("API Endpoint Hit");
+                return Ok(new ResponseModel<string> { Success = true, Message = "API Endpoint Hit", Data = "Hello, World!" });
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error in Get method");
+                return StatusCode(500, "Internal Server Error");
+            }
+        }
+        /// <summary>
+        /// Post Method to send the greeting message
+        /// </summary>
+        [HttpPost]
+        public IActionResult Post(RequestModel requestModel)
+        {
+            try
+            {
+                greetings[requestModel.key] = requestModel.value;
+                _logger.LogInformation("Request Received Successfully!");
+                return Ok(new ResponseModel<string> { Success = true, Message = "Request Received Successfully!", Data = $"Key: {requestModel.key}, Value: {requestModel.value}" });
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error in Post method");
+                return StatusCode(500, "Internal Server Error");
+            }
+        }
+        /// <summary>
+        /// Put method to update an existing greeting
+        /// </summary>
+        [HttpPut]
+        public IActionResult Put(RequestModel requestModel)
+        {
+            try
+            {
+                if (greetings.ContainsKey(requestModel.key))
+                {
+                    greetings[requestModel.key] = requestModel.value;
+                    _logger.LogInformation("Greeting Updated Successfully!");
+                    return Ok(new ResponseModel<string> { Success = true, Message = "Greeting Updated Successfully!", Data = requestModel.value });
+                }
+                return NotFound(new ResponseModel<string> { Success = false, Message = "Key not found!" });
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error in Put method");
+                return StatusCode(500, "Internal Server Error");
+            }
+        }
+        /// <summary>
+        /// Delete method to remove a greeting
+        /// </summary>
+        [HttpDelete("{key}")]
+        public IActionResult Delete(string key)
+        {
+            try
+            {
+                if (greetings.ContainsKey(key))
+                {
+                    greetings.Remove(key);
+                    _logger.LogInformation("Greeting Deleted Successfully!");
+                    return Ok(new ResponseModel<string> { Success = true, Message = "Greeting Deleted Successfully!", Data = key });
+                }
+                return NotFound(new ResponseModel<string> { Success = false, Message = "Key not found!" });
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error in Delete method");
+                return StatusCode(500, "Internal Server Error");
+            }
+        }
+        /// <summary>
+        /// Patch method to Appending part of a greeting
+        /// </summary>
+        [HttpPatch]
+        public IActionResult Patch(RequestModel requestModel)
+        {
+            try
+            {
+                if (greetings.ContainsKey(requestModel.key))
+                {
+                    greetings[requestModel.key] = $"{greetings[requestModel.key]} {requestModel.value}";
 
-        //            var response = new ResponseModel<string>
-        //            {
-        //                Success = true,
-        //                Message = "Greeting Modified Successfully!",
-        //                Data = $"Key: {requestModel.key}, Modified Value: {greetings[requestModel.key]}"
-        //            };
+                    var response = new ResponseModel<string>
+                    {
+                        Success = true,
+                        Message = "Greeting Modified Successfully!",
+                        Data = $"Key: {requestModel.key}, Modified Value: {greetings[requestModel.key]}"
+                    };
 
-        //            _logger.LogInformation($"Greeting Modified: {requestModel.key} -> {greetings[requestModel.key]}");
-        //            return Ok(response);
-        //        }
+                    _logger.LogInformation($"Greeting Modified: {requestModel.key} -> {greetings[requestModel.key]}");
+                    return Ok(response);
+                }
 
-        //        _logger.LogWarning($"Greeting Key Not Found: {requestModel.key}");
-        //        return NotFound(new ResponseModel<string> { Success = false, Message = "Key not found!" });
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        _logger.LogError($"Error in Patch Method: {ex.Message}");
-        //        return StatusCode(500, new ResponseModel<string> { Success = false, Message = "Internal Server Error" });
-        //    }
-        //}
+                _logger.LogWarning($"Greeting Key Not Found: {requestModel.key}");
+                return NotFound(new ResponseModel<string> { Success = false, Message = "Key not found!" });
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Error in Patch Method: {ex.Message}");
+                return StatusCode(500, new ResponseModel<string> { Success = false, Message = "Internal Server Error" });
+            }
+        }
 
         //UC2
         /// <summary>
@@ -183,6 +180,7 @@ namespace GreetingApp.Controllers
 
                 _greetingBL.SaveGreeting(message);
                 _logger.LogInformation($"Saved greeting message: {message}");
+
                 var response = new ResponseModel<string>
                 {
                     Success = true,
@@ -206,23 +204,14 @@ namespace GreetingApp.Controllers
         /// </summary>
         [HttpGet]
         [Route("getGreetingById/{id}")]
-        public async Task<IActionResult> GetGreetingById(int id)
+        public IActionResult GetGreetingById(int id)
         {
             try
             {
-                var cacheKey = $"greeting_{id}";
-                var cachedGreeting = await _redisCacheService.GetCachedData<GreetingMessageEntity>(cacheKey);
-
-                if (cachedGreeting != null)
-                {
-                    _logger.LogInformation($"Cache hit for greeting ID: {id}");
-                    return Ok(new ResponseModel<GreetingMessageEntity> { Success = true, Message = "Greeting found (from cache)", Data = cachedGreeting });
-                }
-
                 var greeting = _greetingBL.GetGreetingById(id);
                 if (greeting == null)
                     return NotFound(new ResponseModel<GreetingMessageEntity> { Success = false, Message = "Greeting not found" });
-                await _redisCacheService.SetCachedData(cacheKey, greeting, TimeSpan.FromMinutes(10));
+
                 return Ok(new ResponseModel<GreetingMessageEntity> { Success = true, Message = "Greeting found", Data = greeting });
             }
             catch (Exception ex)
@@ -237,24 +226,10 @@ namespace GreetingApp.Controllers
         /// </summary>
         [HttpGet]
         [Route("getAllGreetings")]
-        public async Task<IActionResult> GetAllGreetings()
+        public IActionResult GetAllGreetings()
         {
             try
             {
-                _logger.LogInformation("Checking cache for greeting messages...");
-
-                // Check Redis Cache
-                var cachedGreetings = await _redisCacheService.GetCachedData<List<GreetingMessageEntity>>("all_greetings");
-                if (cachedGreetings != null)
-                {
-                    _logger.LogInformation("Returning greetings from cache.");
-                    return Ok(new ResponseModel<List<GreetingMessageEntity>>
-                    {
-                        Success = true,
-                        Message = "Greeting messages fetched from cache!",
-                        Data = cachedGreetings
-                    });
-                }
                 _logger.LogInformation("Fetching all greeting messages...");
 
                 var greetings = _greetingBL.GetAllGreetings();
@@ -268,8 +243,6 @@ namespace GreetingApp.Controllers
                         Message = "No greeting messages found."
                     });
                 }
-                // Store in Redis Cache for 10 minutes
-                await _redisCacheService.SetCachedData("all_greetings", greetings, TimeSpan.FromMinutes(10));
 
                 var response = new ResponseModel<List<GreetingMessageEntity>>
                 {
@@ -296,7 +269,7 @@ namespace GreetingApp.Controllers
         /// </summary>
         [HttpPut]
         [Route("updateGreeting/{id}")]
-        public async Task<IActionResult> UpdateGreeting(int id, [FromBody]string newMessage)
+        public IActionResult UpdateGreeting(int id, [FromBody]string newMessage)
         {
             try
             {
@@ -323,8 +296,7 @@ namespace GreetingApp.Controllers
                         Message = $"Greeting with ID {id} not found."
                     });
                 }
-                // Remove Cache since data changed
-                await _redisCacheService.RemoveCachedData("all_greetings");
+
                 var response = new ResponseModel<string>
                 {
                     Success = true,
@@ -350,7 +322,7 @@ namespace GreetingApp.Controllers
         /// </summary>
         [HttpDelete]
         [Route("deleteGreeting/{id}")]
-        public async Task<IActionResult> DeleteGreeting(int id)
+        public IActionResult DeleteGreeting(int id)
         {
             try
             {
@@ -367,8 +339,6 @@ namespace GreetingApp.Controllers
                         Message = "Greeting not found."
                     });
                 }
-                // Remove Cache
-                await _redisCacheService.RemoveCachedData("all_greetings");
 
                 var response = new ResponseModel<string>
                 {

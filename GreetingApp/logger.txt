@@ -925,3 +925,284 @@ WHERE [g].[Id] = @__p_0
 2025-03-06 12:03:35.2148 INFO Executed action GreetingApp.Controllers.GreetingController.Get (GreetingApp) in 353.749ms 
 2025-03-06 12:03:35.2148 INFO Executed endpoint 'GreetingApp.Controllers.GreetingController.Get (GreetingApp)' 
 2025-03-06 12:03:35.2259 INFO Request finished HTTP/2 GET https://localhost:7244/Greeting/Get - - - 200 - application/json;+charset=utf-8 431.1773ms 
+2025-03-06 16:46:36.0877 INFO Application Starting... 
+2025-03-06 16:46:40.2503 INFO Now listening on: https://localhost:7244 
+2025-03-06 16:46:40.2647 INFO Now listening on: http://localhost:5113 
+2025-03-06 16:46:40.3813 INFO Application started. Press Ctrl+C to shut down. 
+2025-03-06 16:46:40.3813 INFO Hosting environment: Development 
+2025-03-06 16:46:40.3813 INFO Content root path: C:\Users\user\source\GreetingApp_2115100017\GreetingApp\ 
+2025-03-06 16:46:42.2361 INFO Request starting HTTP/2 GET https://localhost:7244/Swagger/index.html - - 
+2025-03-06 16:46:42.2361 INFO Request starting HTTP/2 GET https://localhost:7244/_framework/aspnetcore-browser-refresh.js - - 
+2025-03-06 16:46:42.2862 INFO Request finished HTTP/2 GET https://localhost:7244/_framework/aspnetcore-browser-refresh.js - - - 200 12354 application/javascript;+charset=utf-8 55.9504ms 
+2025-03-06 16:46:42.9148 INFO Request starting HTTP/2 GET https://localhost:7244/Swagger/v1/swagger.json - - 
+2025-03-06 16:46:42.9349 INFO Request finished HTTP/2 GET https://localhost:7244/Swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 20.1516ms 
+2025-03-06 16:46:42.9730 INFO Request finished HTTP/2 GET https://localhost:7244/Swagger/index.html - - - 200 - text/html;charset=utf-8 744.3937ms 
+2025-03-06 16:46:42.9730 INFO Request starting HTTP/2 GET https://localhost:7244/_framework/aspnetcore-browser-refresh.js - - 
+2025-03-06 16:46:42.9917 INFO Request finished HTTP/2 GET https://localhost:7244/_framework/aspnetcore-browser-refresh.js - - - 200 12354 application/javascript;+charset=utf-8 5.3288ms 
+2025-03-06 16:46:43.0432 INFO Request starting HTTP/2 GET https://localhost:7244/Swagger/index.js - - 
+2025-03-06 16:46:43.0529 INFO Request starting HTTP/2 GET https://localhost:7244/_vs/browserLink - - 
+2025-03-06 16:46:43.0724 INFO Request finished HTTP/2 GET https://localhost:7244/Swagger/index.js - - - 200 - application/javascript;charset=utf-8 29.1624ms 
+2025-03-06 16:46:43.7857 INFO Request finished HTTP/2 GET https://localhost:7244/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 742.1909ms 
+2025-03-06 16:46:43.9005 INFO Request starting HTTP/2 GET https://localhost:7244/Swagger/v1/swagger.json - - 
+2025-03-06 16:46:43.9005 INFO Request finished HTTP/2 GET https://localhost:7244/Swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 4.6185ms 
+2025-03-06 16:47:10.4160 INFO Request starting HTTP/2 POST https://localhost:7244/api/user/register application/json 47 
+2025-03-06 16:47:10.4297 INFO Executing endpoint 'GreetingApp.Controllers.UserController.Register (GreetingApp)' 
+2025-03-06 16:47:10.5006 INFO Route matched with {action = "Register", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register(ModelLayer.Model.RegisterRequest) on controller GreetingApp.Controllers.UserController (GreetingApp). 
+2025-03-06 16:47:10.7149 INFO Executing OkObjectResult, writing value of type 'ModelLayer.Model.ResponseModel`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2025-03-06 16:47:10.7258 INFO Executed action GreetingApp.Controllers.UserController.Register (GreetingApp) in 218.4012ms 
+2025-03-06 16:47:10.7258 INFO Executed endpoint 'GreetingApp.Controllers.UserController.Register (GreetingApp)' 
+2025-03-06 16:47:10.7258 INFO Request finished HTTP/2 POST https://localhost:7244/api/user/register application/json 47 - 200 - application/json;+charset=utf-8 310.5264ms 
+2025-03-06 16:47:23.8521 INFO Request starting HTTP/2 POST https://localhost:7244/api/user/login application/json 47 
+2025-03-06 16:47:23.8521 INFO Executing endpoint 'GreetingApp.Controllers.UserController.Login (GreetingApp)' 
+2025-03-06 16:47:23.8521 INFO Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(ModelLayer.Model.LoginRequest) on controller GreetingApp.Controllers.UserController (GreetingApp). 
+2025-03-06 16:47:24.0339 INFO Executing UnauthorizedObjectResult, writing value of type 'ModelLayer.Model.ResponseModel`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2025-03-06 16:47:24.0353 INFO Executed action GreetingApp.Controllers.UserController.Login (GreetingApp) in 174.2754ms 
+2025-03-06 16:47:24.0353 INFO Executed endpoint 'GreetingApp.Controllers.UserController.Login (GreetingApp)' 
+2025-03-06 16:47:24.0353 INFO Request finished HTTP/2 POST https://localhost:7244/api/user/login application/json 47 - 401 - application/json;+charset=utf-8 183.9975ms 
+2025-03-06 16:47:40.8905 INFO Request starting HTTP/2 POST https://localhost:7244/api/user/forgot-password application/json 23 
+2025-03-06 16:47:40.9083 INFO Executing endpoint 'GreetingApp.Controllers.UserController.ForgotPassword (GreetingApp)' 
+2025-03-06 16:47:40.9239 INFO Route matched with {action = "ForgotPassword", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult ForgotPassword(ModelLayer.Model.ForgetPasswordRequest) on controller GreetingApp.Controllers.UserController (GreetingApp). 
+2025-03-06 16:47:40.9314 INFO Executing OkObjectResult, writing value of type 'ModelLayer.Model.ResponseModel`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2025-03-06 16:47:40.9314 INFO Executed action GreetingApp.Controllers.UserController.ForgotPassword (GreetingApp) in 7.5827ms 
+2025-03-06 16:47:40.9314 INFO Executed endpoint 'GreetingApp.Controllers.UserController.ForgotPassword (GreetingApp)' 
+2025-03-06 16:47:40.9314 INFO Request finished HTTP/2 POST https://localhost:7244/api/user/forgot-password application/json 23 - 200 - application/json;+charset=utf-8 41.8660ms 
+2025-03-07 00:08:43.5665 INFO Application Starting... 
+2025-03-07 00:10:46.2610 INFO Application Starting... 
+2025-03-07 00:12:43.6055 INFO Application Starting... 
+2025-03-07 00:12:47.3708 INFO Entity Framework Core 6.0.36 initialized 'UserDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.36' with options: None 
+2025-03-07 00:13:11.1396 INFO Application Starting... 
+2025-03-07 00:13:33.1865 INFO Application Starting... 
+2025-03-07 00:13:36.5662 INFO Entity Framework Core 6.0.36 initialized 'UserDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.36' with options: None 
+2025-03-07 00:13:37.7220 INFO Executed DbCommand (433ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+CREATE DATABASE [UserDB]; 
+2025-03-07 00:13:37.8905 INFO Executed DbCommand (164ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5
+BEGIN
+    ALTER DATABASE [UserDB] SET READ_COMMITTED_SNAPSHOT ON;
+END; 
+2025-03-07 00:13:37.9206 INFO Executed DbCommand (14ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1 
+2025-03-07 00:13:38.0753 INFO Executed DbCommand (25ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [__EFMigrationsHistory] (
+    [MigrationId] nvarchar(150) NOT NULL,
+    [ProductVersion] nvarchar(32) NOT NULL,
+    CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+); 
+2025-03-07 00:13:38.0753 INFO Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1 
+2025-03-07 00:13:38.1131 INFO Executed DbCommand (23ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]'); 
+2025-03-07 00:13:38.1541 INFO Executed DbCommand (38ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId]; 
+2025-03-07 00:13:38.1760 INFO Applying migration '20250306184247_InitialMigration'. 
+2025-03-07 00:13:38.2155 INFO Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Users] (
+    [Id] int NOT NULL IDENTITY,
+    [UserName] nvarchar(max) NOT NULL,
+    [Email] nvarchar(100) NOT NULL,
+    [PasswordHash] nvarchar(max) NOT NULL,
+    [ResetToken] nvarchar(max) NOT NULL,
+    [ResetTokenExpiry] datetime2 NULL,
+    CONSTRAINT [PK_Users] PRIMARY KEY ([Id])
+); 
+2025-03-07 00:13:38.2334 INFO Executed DbCommand (17ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20250306184247_InitialMigration', N'6.0.36'); 
+2025-03-07 00:14:11.0296 INFO Application Starting... 
+2025-03-07 00:14:15.0270 INFO Now listening on: https://localhost:7244 
+2025-03-07 00:14:15.0371 INFO Now listening on: http://localhost:5113 
+2025-03-07 00:14:15.1396 INFO Application started. Press Ctrl+C to shut down. 
+2025-03-07 00:14:15.1396 INFO Hosting environment: Development 
+2025-03-07 00:14:15.1396 INFO Content root path: C:\Users\user\source\GreetingApp_2115100017\GreetingApp\ 
+2025-03-07 00:14:16.5389 INFO Request starting HTTP/2 GET https://localhost:7244/Swagger/index.html - - 
+2025-03-07 00:14:17.0212 INFO Request finished HTTP/2 GET https://localhost:7244/Swagger/index.html - - - 200 - text/html;charset=utf-8 485.7320ms 
+2025-03-07 00:14:17.0536 INFO Request starting HTTP/2 GET https://localhost:7244/_framework/aspnetcore-browser-refresh.js - - 
+2025-03-07 00:14:17.0536 INFO Request starting HTTP/2 GET https://localhost:7244/Swagger/index.js - - 
+2025-03-07 00:14:17.0536 INFO Request finished HTTP/2 GET https://localhost:7244/Swagger/index.js - - - 200 - application/javascript;charset=utf-8 3.9873ms 
+2025-03-07 00:14:17.0536 INFO Request starting HTTP/2 GET https://localhost:7244/_vs/browserLink - - 
+2025-03-07 00:14:17.0661 INFO Request finished HTTP/2 GET https://localhost:7244/_framework/aspnetcore-browser-refresh.js - - - 200 12354 application/javascript;+charset=utf-8 12.4461ms 
+2025-03-07 00:14:17.2349 INFO Request finished HTTP/2 GET https://localhost:7244/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 175.3432ms 
+2025-03-07 00:14:17.3480 INFO Request starting HTTP/2 GET https://localhost:7244/Swagger/v1/swagger.json - - 
+2025-03-07 00:14:17.3480 INFO Request finished HTTP/2 GET https://localhost:7244/Swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 11.2625ms 
+2025-03-07 00:14:26.8478 INFO Request starting HTTP/2 POST https://localhost:7244/api/user/register application/json 71 
+2025-03-07 00:14:26.8628 INFO Executing endpoint 'GreetingApp.Controllers.UserController.Register (GreetingApp)' 
+2025-03-07 00:14:26.9307 INFO Route matched with {action = "Register", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register(ModelLayer.Model.RegisterRequest) on controller GreetingApp.Controllers.UserController (GreetingApp). 
+2025-03-07 00:14:28.4675 INFO Entity Framework Core 6.0.36 initialized 'UserDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.36' with options: None 
+2025-03-07 00:14:30.1732 INFO Executed DbCommand (161ms) [Parameters=[@__email_0='?' (Size = 100)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[Email] = @__email_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END 
+2025-03-07 00:14:30.6487 ERROR Failed executing DbCommand (58ms) [Parameters=[@p0='?' (Size = 100), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Users] ([Email], [PasswordHash], [ResetToken], [ResetTokenExpiry], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT [Id]
+FROM [Users]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity(); 
+2025-03-07 00:14:30.7508 ERROR An exception occurred in the database while saving changes for context type 'RepositoryLayer.Context.UserDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'ResetToken', table 'UserDB.dbo.Users'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:7c5cc255-547c-4e7b-9e55-1fd4cc1eb805
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(StateManager stateManager, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess) Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'ResetToken', table 'UserDB.dbo.Users'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:7c5cc255-547c-4e7b-9e55-1fd4cc1eb805
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(StateManager stateManager, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+2025-03-07 00:19:32.4341 INFO Application Starting... 
+2025-03-07 00:19:36.1223 INFO Application Starting... 
+2025-03-07 00:19:56.6525 INFO Application Starting... 
+2025-03-07 00:19:59.8888 INFO Entity Framework Core 6.0.36 initialized 'UserDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.36' with options: None 
+2025-03-07 00:20:28.2520 INFO Application Starting... 
+2025-03-07 00:20:31.5014 INFO Entity Framework Core 6.0.36 initialized 'UserDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.36' with options: None 
+2025-03-07 00:20:31.9669 INFO Executed DbCommand (22ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1 
+2025-03-07 00:20:32.0159 INFO Executed DbCommand (29ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]'); 
+2025-03-07 00:20:32.0214 INFO Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1 
+2025-03-07 00:20:32.0214 INFO Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]'); 
+2025-03-07 00:20:32.0713 INFO Executed DbCommand (15ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId]; 
+2025-03-07 00:20:32.0959 INFO Applying migration '20250306185000_RemoveResetToken'. 
+2025-03-07 00:20:32.3270 INFO Executed DbCommand (184ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+DECLARE @var0 sysname;
+SELECT @var0 = [d].[name]
+FROM [sys].[default_constraints] [d]
+INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+WHERE ([d].[parent_object_id] = OBJECT_ID(N'[Users]') AND [c].[name] = N'ResetToken');
+IF @var0 IS NOT NULL EXEC(N'ALTER TABLE [Users] DROP CONSTRAINT [' + @var0 + '];');
+ALTER TABLE [Users] DROP COLUMN [ResetToken]; 
+2025-03-07 00:20:32.3549 INFO Executed DbCommand (27ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+DECLARE @var1 sysname;
+SELECT @var1 = [d].[name]
+FROM [sys].[default_constraints] [d]
+INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+WHERE ([d].[parent_object_id] = OBJECT_ID(N'[Users]') AND [c].[name] = N'ResetTokenExpiry');
+IF @var1 IS NOT NULL EXEC(N'ALTER TABLE [Users] DROP CONSTRAINT [' + @var1 + '];');
+ALTER TABLE [Users] DROP COLUMN [ResetTokenExpiry]; 
+2025-03-07 00:20:32.3626 INFO Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20250306185000_RemoveResetToken', N'6.0.36'); 
+2025-03-07 00:20:54.4989 INFO Application Starting... 
+2025-03-07 00:20:58.4575 INFO Now listening on: https://localhost:7244 
+2025-03-07 00:20:58.4758 INFO Now listening on: http://localhost:5113 
+2025-03-07 00:20:59.0093 INFO Application started. Press Ctrl+C to shut down. 
+2025-03-07 00:20:59.0093 INFO Hosting environment: Development 
+2025-03-07 00:20:59.0093 INFO Content root path: C:\Users\user\source\GreetingApp_2115100017\GreetingApp\ 
+2025-03-07 00:20:59.0874 INFO Request starting HTTP/2 GET https://localhost:7244/Swagger/index.html - - 
+2025-03-07 00:20:59.8801 INFO Request finished HTTP/2 GET https://localhost:7244/Swagger/index.html - - - 200 - text/html;charset=utf-8 796.2643ms 
+2025-03-07 00:20:59.9144 INFO Request starting HTTP/2 GET https://localhost:7244/Swagger/index.js - - 
+2025-03-07 00:20:59.9144 INFO Request starting HTTP/2 GET https://localhost:7244/_framework/aspnetcore-browser-refresh.js - - 
+2025-03-07 00:20:59.9144 INFO Request starting HTTP/2 GET https://localhost:7244/_vs/browserLink - - 
+2025-03-07 00:20:59.9144 INFO Request finished HTTP/2 GET https://localhost:7244/Swagger/index.js - - - 200 - application/javascript;charset=utf-8 5.0038ms 
+2025-03-07 00:20:59.9252 INFO Request finished HTTP/2 GET https://localhost:7244/_framework/aspnetcore-browser-refresh.js - - - 200 12354 application/javascript;+charset=utf-8 10.8586ms 
+2025-03-07 00:21:00.0138 INFO Request finished HTTP/2 GET https://localhost:7244/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 98.9523ms 
+2025-03-07 00:21:00.9077 INFO Request starting HTTP/2 GET https://localhost:7244/Swagger/v1/swagger.json - - 
+2025-03-07 00:21:00.9314 INFO Request finished HTTP/2 GET https://localhost:7244/Swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 23.7090ms 
+2025-03-07 00:21:11.2991 INFO Request starting HTTP/2 POST https://localhost:7244/api/user/register application/json 71 
+2025-03-07 00:21:11.2991 INFO Executing endpoint 'GreetingApp.Controllers.UserController.Register (GreetingApp)' 
+2025-03-07 00:21:11.3900 INFO Route matched with {action = "Register", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register(ModelLayer.Model.RegisterRequest) on controller GreetingApp.Controllers.UserController (GreetingApp). 
+2025-03-07 00:21:13.1302 INFO Entity Framework Core 6.0.36 initialized 'UserDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.36' with options: None 
+2025-03-07 00:21:14.8965 INFO Executed DbCommand (118ms) [Parameters=[@__email_0='?' (Size = 100)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[Email] = @__email_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END 
+2025-03-07 00:21:15.3895 INFO Executed DbCommand (12ms) [Parameters=[@p0='?' (Size = 100), @p1='?' (Size = 4000), @p2='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Users] ([Email], [PasswordHash], [UserName])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Users]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity(); 
+2025-03-07 00:21:15.4823 INFO Executing OkObjectResult, writing value of type 'ModelLayer.Model.ResponseModel`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2025-03-07 00:21:15.4936 INFO Executed action GreetingApp.Controllers.UserController.Register (GreetingApp) in 4097.5277ms 
+2025-03-07 00:21:15.4936 INFO Executed endpoint 'GreetingApp.Controllers.UserController.Register (GreetingApp)' 
+2025-03-07 00:21:15.5073 INFO Request finished HTTP/2 POST https://localhost:7244/api/user/register application/json 71 - 200 - application/json;+charset=utf-8 4208.1102ms 
+2025-03-07 00:21:26.7209 INFO Request starting HTTP/2 POST https://localhost:7244/api/user/login application/json 47 
+2025-03-07 00:21:26.7245 INFO Executing endpoint 'GreetingApp.Controllers.UserController.Login (GreetingApp)' 
+2025-03-07 00:21:26.7245 INFO Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(ModelLayer.Model.LoginRequest) on controller GreetingApp.Controllers.UserController (GreetingApp). 
+2025-03-07 00:21:26.7245 INFO Entity Framework Core 6.0.36 initialized 'UserDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.36' with options: None 
+2025-03-07 00:21:26.8764 INFO Executed DbCommand (21ms) [Parameters=[@__email_0='?' (Size = 100)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[PasswordHash], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__email_0 
+2025-03-07 00:21:26.8919 INFO Executing OkObjectResult, writing value of type 'ModelLayer.Model.ResponseModel`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2025-03-07 00:21:26.8919 INFO Executed action GreetingApp.Controllers.UserController.Login (GreetingApp) in 165.1147ms 
+2025-03-07 00:21:26.8919 INFO Executed endpoint 'GreetingApp.Controllers.UserController.Login (GreetingApp)' 
+2025-03-07 00:21:26.8935 INFO Request finished HTTP/2 POST https://localhost:7244/api/user/login application/json 47 - 200 - application/json;+charset=utf-8 172.7240ms 
+2025-03-07 00:21:40.4454 INFO Request starting HTTP/2 POST https://localhost:7244/api/user/forgot-password application/json 23 
+2025-03-07 00:21:40.4454 INFO Executing endpoint 'GreetingApp.Controllers.UserController.ForgotPassword (GreetingApp)' 
+2025-03-07 00:21:40.4454 INFO Route matched with {action = "ForgotPassword", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult ForgotPassword(ModelLayer.Model.ForgetPasswordRequest) on controller GreetingApp.Controllers.UserController (GreetingApp). 
+2025-03-07 00:21:40.4651 INFO Executing OkObjectResult, writing value of type 'ModelLayer.Model.ResponseModel`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2025-03-07 00:21:40.4651 INFO Executed action GreetingApp.Controllers.UserController.ForgotPassword (GreetingApp) in 14.2928ms 
+2025-03-07 00:21:40.4651 INFO Executed endpoint 'GreetingApp.Controllers.UserController.ForgotPassword (GreetingApp)' 
+2025-03-07 00:21:40.4651 INFO Request finished HTTP/2 POST https://localhost:7244/api/user/forgot-password application/json 23 - 200 - application/json;+charset=utf-8 21.8145ms 
+2025-03-07 00:21:57.3430 INFO Request starting HTTP/2 POST https://localhost:7244/api/user/reset-password application/json 50 
+2025-03-07 00:21:57.3430 INFO Executing endpoint 'GreetingApp.Controllers.UserController.ResetPassword (GreetingApp)' 
+2025-03-07 00:21:57.3473 INFO Route matched with {action = "ResetPassword", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult ResetPassword(ModelLayer.Model.ResetPasswordRequest) on controller GreetingApp.Controllers.UserController (GreetingApp). 
+2025-03-07 00:21:57.4361 INFO Entity Framework Core 6.0.36 initialized 'UserDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.36' with options: None 
+2025-03-07 00:21:57.4443 INFO Executed DbCommand (2ms) [Parameters=[@__email_0='?' (Size = 100)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[PasswordHash], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__email_0 
+2025-03-07 00:21:57.4835 INFO Executed DbCommand (21ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Users] SET [PasswordHash] = @p0
+WHERE [Id] = @p1;
+SELECT @@ROWCOUNT; 
+2025-03-07 00:21:57.4835 INFO Executing OkObjectResult, writing value of type 'ModelLayer.Model.ResponseModel`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2025-03-07 00:21:57.4835 INFO Executed action GreetingApp.Controllers.UserController.ResetPassword (GreetingApp) in 138.0474ms 
+2025-03-07 00:21:57.4862 INFO Executed endpoint 'GreetingApp.Controllers.UserController.ResetPassword (GreetingApp)' 
+2025-03-07 00:21:57.4862 INFO Request finished HTTP/2 POST https://localhost:7244/api/user/reset-password application/json 50 - 200 - application/json;+charset=utf-8 143.5807ms 

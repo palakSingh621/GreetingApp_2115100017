@@ -13,8 +13,15 @@ using StackExchange.Redis;
 var builder = WebApplication.CreateBuilder(args);
 var logger = LogManager.Setup().LoadConfigurationFromAppSettings().GetCurrentClassLogger();
 logger.Info("Application Starting...");
-var connectionString = builder.Configuration.GetConnectionString("SqlConnection");
-builder.Services.AddDbContext<GreetingAppContext>(options => options.UseSqlServer(connectionString));
+
+// Adding Greeting Messages API database
+builder.Services.AddDbContext<GreetingAppContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("SqlConnection")));
+
+// Add User API database
+builder.Services.AddDbContext<UserDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("UserDbConnection")));
+
 // Add services to the container.
 
 builder.Services.AddControllers(options =>
@@ -23,6 +30,8 @@ builder.Services.AddControllers(options =>
 });
 builder.Services.AddScoped<IGreetingBL, GreetingBL>();
 builder.Services.AddScoped<IGreetingRL, GreetingRL>();
+builder.Services.AddScoped<IUserBL, UserBL>();
+builder.Services.AddScoped<IUserRL, UserRL>();
 
 // Add NLog to the service collection
 builder.Logging.ClearProviders();

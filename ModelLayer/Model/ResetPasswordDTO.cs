@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace ModelLayer.Model
 {
-    public class ForgetPasswordRequest
+    public class ResetPasswordDTO
     {
-        public string Email { get; set; } = string.Empty;
+        public string NewPassword { get; set; }
     }
 }

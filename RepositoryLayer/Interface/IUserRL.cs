@@ -12,6 +12,9 @@ namespace RepositoryLayer.Interface
         bool UserExists(string email);
         UserModel CreateUser(string username, string email, string passwordHash);
         UserModel GetUserByEmail(string email);
-        void UpdateUserPassword(string email, string newPasswordHash);
+        UserModel GetUserById(int userId);
+        bool UpdateUserPassword(string email, string newPasswordHash);
+        string GenerateResetToken(int userId, string email);
+        int ResetPassword(string token, ResetPasswordDTO model);
     }
 }

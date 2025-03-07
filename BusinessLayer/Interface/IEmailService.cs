@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ModelLayer.Model
+namespace BusinessLayer.Interface
 {
-    public class ForgetPasswordRequest
+    public interface IEmailService
     {
-        public string Email { get; set; } = string.Empty;
+        Task SendResetEmail(string email, string token);
+
     }
 }

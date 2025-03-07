@@ -25,3 +25,7 @@
  2. Setting up Redis Cache for Greeting Messages.
 
 **UC11:** Appling  JWT into project.
+
+**UC12:** Giving body to Forget password by applying SMTP server mail generation and sending token generated using jwt in the mail and 
+giving body to Reset password using JWT token received in mail.
+

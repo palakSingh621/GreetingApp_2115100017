@@ -2,6 +2,12 @@
 using RepositoryLayer.Interface;
 using BusinessLayer.Interface;
 using RepositoryLayer.Hashing;
+using System.Text;
+using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Mvc;
 
 namespace BusinessLayer.Service
 {
@@ -31,19 +37,28 @@ namespace BusinessLayer.Service
             return user;
         }
 
-        public ResponseModel<string> ForgotPassword(ForgetPasswordRequest model)
+        public string GenerateResetToken(int userId, string email)
         {
-            // Logic to send a password reset link via email
-            return new ResponseModel<string> { Success = true, Message = "Password reset link sent" };
+            return _userRepository.GenerateResetToken(userId, email);
         }
-
-        public ResponseModel<string> ResetPassword(ResetPasswordRequest model)
+        public UserModel GetUserByEmail(string email)
         {
-            string hashedPassword = HashingHelper.HashPassword(model.NewPassword);
-            _userRepository.UpdateUserPassword(model.Email, hashedPassword);
-
-            return new ResponseModel<string> { Success = true, Message = "Password reset successful" };
+            return _userRepository.GetUserByEmail(email);
+        }
+        public UserModel ResetPassword(string token,ResetPasswordDTO model)
+        {
+            int userId=_userRepository.ResetPassword(token, model);
+            var user = _userRepository.GetUserById(userId);
+            if (user != null)
+            {
+                string hashedPassword = HashingHelper.HashPassword(model.NewPassword);
+                user.PasswordHash = hashedPassword;
+                if (_userRepository.UpdateUserPassword(user.Email, user.PasswordHash))
+                {
+                    return user;
+                }
+            }
+            return null;
         }
     }
-
 }

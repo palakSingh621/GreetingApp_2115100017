@@ -2,6 +2,10 @@
 using BusinessLayer.Interface;
 using ModelLayer.Model;
 using GreetingApp.Helper;
+using System.Diagnostics;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Text;
 
 namespace GreetingApp.Controllers
 {
@@ -12,13 +16,15 @@ namespace GreetingApp.Controllers
         private readonly ILogger<UserController> _logger;
         private readonly JwtTokenHelper _jwtHelper;
         private readonly IUserBL _userBL;
+        private readonly IEmailService _emailService;
         ResponseModel<string> response;
 
-        public UserController(ILogger<UserController> logger,IUserBL userBL,JwtTokenHelper jwtTokenHelper)
+        public UserController(ILogger<UserController> logger,IUserBL userBL,JwtTokenHelper jwtTokenHelper, IEmailService emailService)
         {
             _logger= logger;
             _userBL = userBL;
             _jwtHelper = jwtTokenHelper;
+            _emailService = emailService;
         }
 
         [HttpPost]
@@ -77,18 +83,60 @@ namespace GreetingApp.Controllers
 
         [HttpPost]
         [Route("forgot-password")]
-        public IActionResult ForgotPassword([FromBody] ForgetPasswordRequest model)
+        public async Task<IActionResult> ForgotPassword([FromBody] ForgetPasswordRequest model)
         {
-            var response = _userBL.ForgotPassword(model);
-            return Ok(response);
+            _logger.LogInformation("ForgotPassword request received with email: {Email}", model.Email);
+            response = new ResponseModel<string>();
+            try
+            {
+                if(string.IsNullOrWhiteSpace(model.Email))
+                {
+                    return BadRequest(new { success = false, message = "Email is required" });
+                }
+                var user = _userBL.GetUserByEmail(model.Email);
+                if (user != null)
+                {
+                    string token = _userBL.GenerateResetToken(user.Id, user.Email);
+                    await _emailService.SendResetEmail(user.Email, token);
+                    response.Success = true;
+                    response.Message = "Reset password link sent to email";
+                    return Ok(response);
+                }
+                response.Success = false;
+                response.Message = "User not found";
+                return BadRequest(response);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Process Failed");
+                return BadRequest(new { Success = false, Message = "Process Failed", Error = ex.Message });
+            }
         }
 
         [HttpPost]
         [Route("reset-password")]
-        public IActionResult ResetPassword([FromBody] ResetPasswordRequest model)
+        public IActionResult ResetPassword([FromQuery] string token, [FromBody] ResetPasswordDTO model)
         {
-            var response = _userBL.ResetPassword(model);
-            return Ok(response);
+            _logger.LogInformation("Resetting Password...");
+            response= new ResponseModel<string>();
+            try
+            {
+                var user = _userBL.ResetPassword(token, model);
+                if ( user!=null)
+                {
+                    response.Success = true;
+                    response.Message = "Password reset successful";
+                    return Ok(response);
+                }
+                response.Success = false;
+                response.Message = "Invalid or expired token";
+                return BadRequest(response);
+            }
+            catch(Exception ex)
+            {
+                _logger.LogError(ex, "Process Failed");
+                return BadRequest(new { Success = false, Message = "Process Failed", Error = ex.Message });
+            }
         }
     }
 }

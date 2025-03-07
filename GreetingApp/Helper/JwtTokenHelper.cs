@@ -45,16 +45,6 @@ namespace GreetingApp.Helper
             signingCredentials: credentials
         );
             return new JwtSecurityTokenHandler().WriteToken(token);
-
-        }
-        internal string GenerateToken(bool user)
-        {
-            throw new NotImplementedException();
-        }
-
-        internal object GenerateToken(LoginRequest user)
-        {
-            throw new NotImplementedException();
         }
     }
 }

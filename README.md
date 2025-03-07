@@ -19,3 +19,9 @@
 **UC8:** Ability for the Greeting App to delete a Greeting Messages in the Repository
 
 **UC9:** Apply Swagger and global exception in the project.
+
+**UC10:** 
+ 1. Previous Controller will have all the api's from UC1 to UC8. Creating Second Controller (UserController) where it will contain api for login, registration, forget password     and reset password. Apply logic for registration and loginapi for user. Apply hashing also(salting) for register and login.
+ 2. Setting up Redis Cache for Greeting Messages.
+
+**UC11:** Appling  JWT into project.

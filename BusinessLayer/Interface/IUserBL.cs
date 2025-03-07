@@ -9,8 +9,8 @@ namespace BusinessLayer.Interface
 {
     public interface IUserBL
     {
-        ResponseModel<string> RegisterUser(RegisterRequest model);
-        ResponseModel<string> LoginUser(LoginRequest model);
+        UserModel RegisterUser(RegisterRequest model);
+        UserModel LoginUser(LoginRequest model);
         ResponseModel<string> ForgotPassword(ForgetPasswordRequest model);
         ResponseModel<string> ResetPassword(ResetPasswordRequest model);
     }

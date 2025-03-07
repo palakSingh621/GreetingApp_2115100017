@@ -14,24 +14,21 @@ namespace BusinessLayer.Service
             _userRepository = userRepository;
         }
 
-        public ResponseModel<string> RegisterUser(RegisterRequest model)
+        public UserModel RegisterUser(RegisterRequest model)
         {
             if (_userRepository.UserExists(model.Email))
-                return new ResponseModel<string> { Success = false, Message = "Email already exists" };
-
+                return null;
             string hashedPassword = HashingHelper.HashPassword(model.Password);
-            _userRepository.CreateUser(model.UserName, model.Email, hashedPassword);
-
-            return new ResponseModel<string> { Success = true, Message = "User registered successfully" };
+            var user=_userRepository.CreateUser(model.UserName, model.Email, hashedPassword);
+            return user;
         }
 
-        public ResponseModel<string> LoginUser(LoginRequest model)
+        public UserModel LoginUser(LoginRequest model)
         {
             var user = _userRepository.GetUserByEmail(model.Email);
             if (user == null || !HashingHelper.VerifyPassword(model.Password, user.PasswordHash))
-                return new ResponseModel<string> { Success = false, Message = "Invalid credentials" };
-
-            return new ResponseModel<string> { Success = true, Message = "Login successful", Data = "JWT_TOKEN_HERE" };
+                return null;
+            return user;
         }
 
         public ResponseModel<string> ForgotPassword(ForgetPasswordRequest model)

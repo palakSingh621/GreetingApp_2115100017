@@ -20,11 +20,12 @@ namespace RepositoryLayer.Service
 
         public bool UserExists(string email) => _context.Users.Any(u => u.Email ==email);
 
-        public void CreateUser(string username, string email, string passwordHash)
+        public UserModel CreateUser(string username, string email, string passwordHash)
         {
             var user = new UserModel { UserName= username, Email = email, PasswordHash = passwordHash };
             _context.Users.Add(user);
             _context.SaveChanges();
+            return user;
         }
         public UserModel GetUserByEmail(string email)
         {

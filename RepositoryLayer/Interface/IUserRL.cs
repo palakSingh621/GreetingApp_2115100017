@@ -10,7 +10,7 @@ namespace RepositoryLayer.Interface
     public interface IUserRL
     {
         bool UserExists(string email);
-        void CreateUser(string username, string email, string passwordHash);
+        UserModel CreateUser(string username, string email, string passwordHash);
         UserModel GetUserByEmail(string email);
         void UpdateUserPassword(string email, string newPasswordHash);
     }

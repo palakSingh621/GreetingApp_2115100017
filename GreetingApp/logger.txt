@@ -1206,3 +1206,310 @@ SELECT @@ROWCOUNT;
 2025-03-07 00:21:57.4835 INFO Executed action GreetingApp.Controllers.UserController.ResetPassword (GreetingApp) in 138.0474ms 
 2025-03-07 00:21:57.4862 INFO Executed endpoint 'GreetingApp.Controllers.UserController.ResetPassword (GreetingApp)' 
 2025-03-07 00:21:57.4862 INFO Request finished HTTP/2 POST https://localhost:7244/api/user/reset-password application/json 50 - 200 - application/json;+charset=utf-8 143.5807ms 
+2025-03-07 13:55:41.7496 INFO Application Starting... 
+2025-03-07 13:57:28.3732 INFO Application Starting... 
+2025-03-07 13:57:32.7756 INFO User profile is available. Using 'C:\Users\user\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest. 
+2025-03-07 13:57:32.8201 INFO Creating key {6d3585cb-eaa6-4999-8d8d-6ae714395d74} with creation date 2025-03-07 08:27:32Z, activation date 2025-03-07 08:27:32Z, and expiration date 2025-06-05 08:27:32Z. 
+2025-03-07 13:57:32.8522 ERROR An error occurred while encrypting to Windows DPAPI. System.MissingMethodException: Method not found: 'Boolean Microsoft.AspNetCore.Cryptography.UnsafeNativeMethods.CryptProtectData(Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, IntPtr, UInt32, Microsoft.AspNetCore.Cryptography.DATA_BLOB ByRef)'.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.ProtectWithDpapiCore(Byte* pbSecret, UInt32 cbSecret, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy, Boolean fLocalMachine)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.ProtectWithDpapi(ISecret secret, Boolean protectToLocalMachine)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlEncryptor.Encrypt(XElement plaintextElement)
+2025-03-07 13:57:32.9449 ERROR An error occurred while reading the key ring. System.MissingMethodException: Method not found: 'Boolean Microsoft.AspNetCore.Cryptography.UnsafeNativeMethods.CryptProtectData(Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, IntPtr, UInt32, Microsoft.AspNetCore.Cryptography.DATA_BLOB ByRef)'.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.ProtectWithDpapiCore(Byte* pbSecret, UInt32 cbSecret, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy, Boolean fLocalMachine)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.ProtectWithDpapi(ISecret secret, Boolean protectToLocalMachine)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlEncryptor.Encrypt(XElement plaintextElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.EncryptIfNecessary(IXmlEncryptor encryptor, XElement element)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.CreateNewKey(Guid keyId, DateTimeOffset creationDate, DateTimeOffset activationDate, DateTimeOffset expirationDate)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.CreateNewKey(DateTimeOffset activationDate, DateTimeOffset expirationDate)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider.CreateCacheableKeyRingCore(DateTimeOffset now, IKey keyJustAdded)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.ICacheableKeyRingProvider.GetCacheableKeyRing(DateTimeOffset now)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider.GetCurrentKeyRingCore(DateTime utcNow, Boolean forceRefresh)
+2025-03-07 13:57:32.9449 INFO Key ring failed to load during application startup. System.MissingMethodException: Method not found: 'Boolean Microsoft.AspNetCore.Cryptography.UnsafeNativeMethods.CryptProtectData(Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, IntPtr, UInt32, Microsoft.AspNetCore.Cryptography.DATA_BLOB ByRef)'.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.ProtectWithDpapiCore(Byte* pbSecret, UInt32 cbSecret, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy, Boolean fLocalMachine)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.ProtectWithDpapi(ISecret secret, Boolean protectToLocalMachine)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlEncryptor.Encrypt(XElement plaintextElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.EncryptIfNecessary(IXmlEncryptor encryptor, XElement element)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.CreateNewKey(Guid keyId, DateTimeOffset creationDate, DateTimeOffset activationDate, DateTimeOffset expirationDate)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.CreateNewKey(DateTimeOffset activationDate, DateTimeOffset expirationDate)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider.CreateCacheableKeyRingCore(DateTimeOffset now, IKey keyJustAdded)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.ICacheableKeyRingProvider.GetCacheableKeyRing(DateTimeOffset now)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider.GetCurrentKeyRingCore(DateTime utcNow, Boolean forceRefresh)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider.GetCurrentKeyRing()
+   at Microsoft.AspNetCore.DataProtection.Internal.DataProtectionHostedService.StartAsync(CancellationToken token)
+2025-03-07 13:57:33.4534 INFO Now listening on: https://localhost:7244 
+2025-03-07 13:57:33.4534 INFO Now listening on: http://localhost:5113 
+2025-03-07 13:57:33.5475 INFO Application started. Press Ctrl+C to shut down. 
+2025-03-07 13:57:33.5497 INFO Hosting environment: Development 
+2025-03-07 13:57:33.5497 INFO Content root path: C:\Users\user\source\GreetingApp_2115100017\GreetingApp\ 
+2025-03-07 13:57:36.1305 INFO Request starting HTTP/2 GET https://localhost:7244/Swagger/index.html - - 
+2025-03-07 13:57:36.8098 INFO Request finished HTTP/2 GET https://localhost:7244/Swagger/index.html - - - 200 - text/html;charset=utf-8 686.9497ms 
+2025-03-07 13:57:36.9327 INFO Request starting HTTP/2 GET https://localhost:7244/Swagger/swagger-ui.css - - 
+2025-03-07 13:57:36.9327 INFO Request starting HTTP/2 GET https://localhost:7244/Swagger/index.css - - 
+2025-03-07 13:57:36.9327 INFO Request starting HTTP/2 GET https://localhost:7244/_framework/aspnetcore-browser-refresh.js - - 
+2025-03-07 13:57:36.9327 INFO Request starting HTTP/2 GET https://localhost:7244/Swagger/swagger-ui-bundle.js - - 
+2025-03-07 13:57:36.9327 INFO Request starting HTTP/2 GET https://localhost:7244/Swagger/swagger-ui-standalone-preset.js - - 
+2025-03-07 13:57:36.9327 INFO Request starting HTTP/2 GET https://localhost:7244/Swagger/index.js - - 
+2025-03-07 13:57:37.0062 INFO Request finished HTTP/2 GET https://localhost:7244/Swagger/index.js - - - 200 - application/javascript;charset=utf-8 71.2626ms 
+2025-03-07 13:57:37.0062 INFO Request finished HTTP/2 GET https://localhost:7244/_framework/aspnetcore-browser-refresh.js - - - 200 12354 application/javascript;+charset=utf-8 79.5067ms 
+2025-03-07 13:57:37.0225 INFO The file /swagger-ui.css was not modified 
+2025-03-07 13:57:37.0225 INFO The file /swagger-ui-standalone-preset.js was not modified 
+2025-03-07 13:57:37.0225 INFO The file /index.css was not modified 
+2025-03-07 13:57:37.0225 INFO The file /swagger-ui-bundle.js was not modified 
+2025-03-07 13:57:37.0225 INFO Request finished HTTP/2 GET https://localhost:7244/Swagger/index.css - - - 304 - text/css 90.6632ms 
+2025-03-07 13:57:37.0225 INFO Request finished HTTP/2 GET https://localhost:7244/Swagger/swagger-ui.css - - - 304 - text/css 91.1273ms 
+2025-03-07 13:57:37.0225 INFO Request finished HTTP/2 GET https://localhost:7244/Swagger/swagger-ui-bundle.js - - - 304 - application/javascript 90.2354ms 
+2025-03-07 13:57:37.0225 INFO Request finished HTTP/2 GET https://localhost:7244/Swagger/swagger-ui-standalone-preset.js - - - 304 - application/javascript 89.7833ms 
+2025-03-07 13:57:37.0345 INFO Request starting HTTP/2 GET https://localhost:7244/_vs/browserLink - - 
+2025-03-07 13:57:37.2284 INFO Request finished HTTP/2 GET https://localhost:7244/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 193.8103ms 
+2025-03-07 13:57:37.5076 INFO Request starting HTTP/2 GET https://localhost:7244/Swagger/v1/swagger.json - - 
+2025-03-07 13:57:37.5206 INFO Request finished HTTP/2 GET https://localhost:7244/Swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 12.9622ms 
+2025-03-07 13:57:48.2845 INFO Request starting HTTP/2 POST https://localhost:7244/api/user/register application/json 71 
+2025-03-07 13:57:48.5759 INFO Executing endpoint 'GreetingApp.Controllers.UserController.Register (GreetingApp)' 
+2025-03-07 13:57:48.6458 INFO Route matched with {action = "Register", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register(ModelLayer.Model.RegisterRequest) on controller GreetingApp.Controllers.UserController (GreetingApp). 
+2025-03-07 13:57:49.1650 INFO User Register successfully.. 
+2025-03-07 13:57:50.1445 INFO Entity Framework Core 6.0.36 initialized 'UserDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.36' with options: None 
+2025-03-07 13:57:51.9950 INFO Executed DbCommand (154ms) [Parameters=[@__email_0='?' (Size = 100)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[Email] = @__email_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END 
+2025-03-07 13:57:52.0514 WARN User registration failed: Email already exists. 
+2025-03-07 13:57:52.0670 INFO Executing ConflictObjectResult, writing value of type 'ModelLayer.Model.ResponseModel`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2025-03-07 13:57:52.0670 INFO Executed action GreetingApp.Controllers.UserController.Register (GreetingApp) in 3425.8547ms 
+2025-03-07 13:57:52.0670 INFO Executed endpoint 'GreetingApp.Controllers.UserController.Register (GreetingApp)' 
+2025-03-07 13:57:52.0958 INFO Request finished HTTP/2 POST https://localhost:7244/api/user/register application/json 71 - 409 - application/json;+charset=utf-8 3811.2668ms 
+2025-03-07 13:58:16.0775 INFO Request starting HTTP/2 POST https://localhost:7244/api/user/register application/json 67 
+2025-03-07 13:58:16.1056 INFO Executing endpoint 'GreetingApp.Controllers.UserController.Register (GreetingApp)' 
+2025-03-07 13:58:16.1056 INFO Route matched with {action = "Register", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register(ModelLayer.Model.RegisterRequest) on controller GreetingApp.Controllers.UserController (GreetingApp). 
+2025-03-07 13:58:16.1589 INFO User Register successfully.. 
+2025-03-07 13:58:16.1841 INFO Entity Framework Core 6.0.36 initialized 'UserDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.36' with options: None 
+2025-03-07 13:58:16.3256 INFO Executed DbCommand (27ms) [Parameters=[@__email_0='?' (Size = 100)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[Email] = @__email_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END 
+2025-03-07 13:58:16.7708 INFO Executed DbCommand (77ms) [Parameters=[@p0='?' (Size = 100), @p1='?' (Size = 4000), @p2='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Users] ([Email], [PasswordHash], [UserName])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Users]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity(); 
+2025-03-07 13:58:17.1087 ERROR Error occurred while registering user. System.ArgumentOutOfRangeException: IDX10720: Unable to create KeyedHashAlgorithm for algorithm 'HS256', the key size must be greater than: '256' bits, key has '160' bits. (Parameter 'keyBytes')
+   at Microsoft.IdentityModel.Tokens.CryptoProviderFactory.ValidateKeySize(Byte[] keyBytes, String algorithm, Int32 expectedNumberOfBytes)
+   at Microsoft.IdentityModel.Tokens.CryptoProviderFactory.CreateKeyedHashAlgorithm(Byte[] keyBytes, String algorithm)
+   at Microsoft.IdentityModel.Tokens.DisposableObjectPool`1.Allocate()
+   at Microsoft.IdentityModel.Tokens.SymmetricSignatureProvider.Sign(Byte[] input)
+   at Microsoft.IdentityModel.JsonWebTokens.JwtTokenUtilities.CreateEncodedSignature(String input, SigningCredentials signingCredentials)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.WriteToken(SecurityToken token)
+   at GreetingApp.Helper.JwtTokenHelper.GenerateToken(UserModel user) in C:\Users\user\source\GreetingApp_2115100017\GreetingApp\Helper\JwtTokenHelper.cs:line 47
+   at GreetingApp.Controllers.UserController.Register(RegisterRequest model) in C:\Users\user\source\GreetingApp_2115100017\GreetingApp\Controllers\UserController.cs:line 37
+2025-03-07 13:58:17.1547 INFO Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2025-03-07 13:58:17.1547 INFO Executed action GreetingApp.Controllers.UserController.Register (GreetingApp) in 1017.8211ms 
+2025-03-07 13:58:17.1547 INFO Executed endpoint 'GreetingApp.Controllers.UserController.Register (GreetingApp)' 
+2025-03-07 13:58:17.1547 INFO Request finished HTTP/2 POST https://localhost:7244/api/user/register application/json 67 - 500 - application/json;+charset=utf-8 1081.0386ms 
+2025-03-07 13:58:53.9380 INFO Request starting HTTP/2 POST https://localhost:7244/api/user/register application/json 82 
+2025-03-07 13:58:53.9638 INFO Executing endpoint 'GreetingApp.Controllers.UserController.Register (GreetingApp)' 
+2025-03-07 13:58:53.9638 INFO Route matched with {action = "Register", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register(ModelLayer.Model.RegisterRequest) on controller GreetingApp.Controllers.UserController (GreetingApp). 
+2025-03-07 13:58:53.9791 INFO User Register successfully.. 
+2025-03-07 13:58:54.0700 INFO Entity Framework Core 6.0.36 initialized 'UserDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.36' with options: None 
+2025-03-07 13:58:54.0859 INFO Executed DbCommand (14ms) [Parameters=[@__email_0='?' (Size = 100)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[Email] = @__email_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END 
+2025-03-07 13:58:54.0859 INFO Executed DbCommand (3ms) [Parameters=[@p0='?' (Size = 100), @p1='?' (Size = 4000), @p2='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Users] ([Email], [PasswordHash], [UserName])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Users]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity(); 
+2025-03-07 13:58:54.1474 ERROR Error occurred while registering user. System.ArgumentOutOfRangeException: IDX10720: Unable to create KeyedHashAlgorithm for algorithm 'HS256', the key size must be greater than: '256' bits, key has '160' bits. (Parameter 'keyBytes')
+   at Microsoft.IdentityModel.Tokens.CryptoProviderFactory.ValidateKeySize(Byte[] keyBytes, String algorithm, Int32 expectedNumberOfBytes)
+   at Microsoft.IdentityModel.Tokens.CryptoProviderFactory.CreateKeyedHashAlgorithm(Byte[] keyBytes, String algorithm)
+   at Microsoft.IdentityModel.Tokens.DisposableObjectPool`1.Allocate()
+   at Microsoft.IdentityModel.Tokens.SymmetricSignatureProvider.Sign(Byte[] input)
+   at Microsoft.IdentityModel.JsonWebTokens.JwtTokenUtilities.CreateEncodedSignature(String input, SigningCredentials signingCredentials)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.WriteToken(SecurityToken token)
+   at GreetingApp.Helper.JwtTokenHelper.GenerateToken(UserModel user) in C:\Users\user\source\GreetingApp_2115100017\GreetingApp\Helper\JwtTokenHelper.cs:line 47
+   at GreetingApp.Controllers.UserController.Register(RegisterRequest model) in C:\Users\user\source\GreetingApp_2115100017\GreetingApp\Controllers\UserController.cs:line 37
+2025-03-07 13:58:54.1474 INFO Executing ObjectResult, writing value of type '<>f__AnonymousType0`3[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2025-03-07 13:58:54.1474 INFO Executed action GreetingApp.Controllers.UserController.Register (GreetingApp) in 177.4507ms 
+2025-03-07 13:58:54.1474 INFO Executed endpoint 'GreetingApp.Controllers.UserController.Register (GreetingApp)' 
+2025-03-07 13:58:54.1474 INFO Request finished HTTP/2 POST https://localhost:7244/api/user/register application/json 82 - 500 - application/json;+charset=utf-8 213.3693ms 
+2025-03-07 14:01:11.5115 INFO Application Starting... 
+2025-03-07 14:01:15.6644 INFO User profile is available. Using 'C:\Users\user\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest. 
+2025-03-07 14:01:15.7025 INFO Creating key {86754c5e-5af0-401a-9b55-95e27b68a8f3} with creation date 2025-03-07 08:31:15Z, activation date 2025-03-07 08:31:15Z, and expiration date 2025-06-05 08:31:15Z. 
+2025-03-07 14:01:15.7214 ERROR An error occurred while encrypting to Windows DPAPI. System.MissingMethodException: Method not found: 'Boolean Microsoft.AspNetCore.Cryptography.UnsafeNativeMethods.CryptProtectData(Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, IntPtr, UInt32, Microsoft.AspNetCore.Cryptography.DATA_BLOB ByRef)'.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.ProtectWithDpapiCore(Byte* pbSecret, UInt32 cbSecret, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy, Boolean fLocalMachine)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.ProtectWithDpapi(ISecret secret, Boolean protectToLocalMachine)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlEncryptor.Encrypt(XElement plaintextElement)
+2025-03-07 14:01:15.7803 ERROR An error occurred while reading the key ring. System.MissingMethodException: Method not found: 'Boolean Microsoft.AspNetCore.Cryptography.UnsafeNativeMethods.CryptProtectData(Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, IntPtr, UInt32, Microsoft.AspNetCore.Cryptography.DATA_BLOB ByRef)'.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.ProtectWithDpapiCore(Byte* pbSecret, UInt32 cbSecret, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy, Boolean fLocalMachine)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.ProtectWithDpapi(ISecret secret, Boolean protectToLocalMachine)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlEncryptor.Encrypt(XElement plaintextElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.EncryptIfNecessary(IXmlEncryptor encryptor, XElement element)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.CreateNewKey(Guid keyId, DateTimeOffset creationDate, DateTimeOffset activationDate, DateTimeOffset expirationDate)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.CreateNewKey(DateTimeOffset activationDate, DateTimeOffset expirationDate)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider.CreateCacheableKeyRingCore(DateTimeOffset now, IKey keyJustAdded)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.ICacheableKeyRingProvider.GetCacheableKeyRing(DateTimeOffset now)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider.GetCurrentKeyRingCore(DateTime utcNow, Boolean forceRefresh)
+2025-03-07 14:01:15.7803 INFO Key ring failed to load during application startup. System.MissingMethodException: Method not found: 'Boolean Microsoft.AspNetCore.Cryptography.UnsafeNativeMethods.CryptProtectData(Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, IntPtr, UInt32, Microsoft.AspNetCore.Cryptography.DATA_BLOB ByRef)'.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.ProtectWithDpapiCore(Byte* pbSecret, UInt32 cbSecret, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy, Boolean fLocalMachine)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.ProtectWithDpapi(ISecret secret, Boolean protectToLocalMachine)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlEncryptor.Encrypt(XElement plaintextElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.EncryptIfNecessary(IXmlEncryptor encryptor, XElement element)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.CreateNewKey(Guid keyId, DateTimeOffset creationDate, DateTimeOffset activationDate, DateTimeOffset expirationDate)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.CreateNewKey(DateTimeOffset activationDate, DateTimeOffset expirationDate)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider.CreateCacheableKeyRingCore(DateTimeOffset now, IKey keyJustAdded)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.ICacheableKeyRingProvider.GetCacheableKeyRing(DateTimeOffset now)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider.GetCurrentKeyRingCore(DateTime utcNow, Boolean forceRefresh)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider.GetCurrentKeyRing()
+   at Microsoft.AspNetCore.DataProtection.Internal.DataProtectionHostedService.StartAsync(CancellationToken token)
+2025-03-07 14:01:16.2800 INFO Now listening on: https://localhost:7244 
+2025-03-07 14:01:16.2800 INFO Now listening on: http://localhost:5113 
+2025-03-07 14:01:16.3592 INFO Application started. Press Ctrl+C to shut down. 
+2025-03-07 14:01:16.3614 INFO Hosting environment: Development 
+2025-03-07 14:01:16.3614 INFO Content root path: C:\Users\user\source\GreetingApp_2115100017\GreetingApp\ 
+2025-03-07 14:01:17.4337 INFO Request starting HTTP/2 GET https://localhost:7244/Swagger/index.html - - 
+2025-03-07 14:01:18.2401 INFO Request finished HTTP/2 GET https://localhost:7244/Swagger/index.html - - - 200 - text/html;charset=utf-8 811.2519ms 
+2025-03-07 14:01:18.3019 INFO Request starting HTTP/2 GET https://localhost:7244/Swagger/index.js - - 
+2025-03-07 14:01:18.3019 INFO Request finished HTTP/2 GET https://localhost:7244/Swagger/index.js - - - 200 - application/javascript;charset=utf-8 4.0925ms 
+2025-03-07 14:01:18.3019 INFO Request starting HTTP/2 GET https://localhost:7244/_framework/aspnetcore-browser-refresh.js - - 
+2025-03-07 14:01:18.3167 INFO Request starting HTTP/2 GET https://localhost:7244/_vs/browserLink - - 
+2025-03-07 14:01:18.3167 INFO Request finished HTTP/2 GET https://localhost:7244/_framework/aspnetcore-browser-refresh.js - - - 200 12354 application/javascript;+charset=utf-8 10.1596ms 
+2025-03-07 14:01:18.4289 INFO Request finished HTTP/2 GET https://localhost:7244/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 112.3467ms 
+2025-03-07 14:01:18.7631 INFO Request starting HTTP/2 GET https://localhost:7244/Swagger/v1/swagger.json - - 
+2025-03-07 14:01:18.7792 INFO Request finished HTTP/2 GET https://localhost:7244/Swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 16.0525ms 
+2025-03-07 14:01:55.4379 INFO Request starting HTTP/2 POST https://localhost:7244/api/user/register application/json 82 
+2025-03-07 14:01:55.6111 INFO Executing endpoint 'GreetingApp.Controllers.UserController.Register (GreetingApp)' 
+2025-03-07 14:01:55.6623 INFO Route matched with {action = "Register", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register(ModelLayer.Model.RegisterRequest) on controller GreetingApp.Controllers.UserController (GreetingApp). 
+2025-03-07 14:01:56.0961 INFO User Register successfully.. 
+2025-03-07 14:01:57.3444 INFO Entity Framework Core 6.0.36 initialized 'UserDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.36' with options: None 
+2025-03-07 14:01:58.9485 INFO Executed DbCommand (109ms) [Parameters=[@__email_0='?' (Size = 100)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[Email] = @__email_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END 
+2025-03-07 14:01:59.3996 INFO Executed DbCommand (5ms) [Parameters=[@p0='?' (Size = 100), @p1='?' (Size = 4000), @p2='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Users] ([Email], [PasswordHash], [UserName])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Users]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity(); 
+2025-03-07 14:01:59.5614 INFO User Registered successfully. 
+2025-03-07 14:01:59.5757 INFO Executing OkObjectResult, writing value of type 'ModelLayer.Model.ResponseModel`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2025-03-07 14:01:59.5881 INFO Executed action GreetingApp.Controllers.UserController.Register (GreetingApp) in 3916.13ms 
+2025-03-07 14:01:59.5881 INFO Executed endpoint 'GreetingApp.Controllers.UserController.Register (GreetingApp)' 
+2025-03-07 14:01:59.6029 INFO Request finished HTTP/2 POST https://localhost:7244/api/user/register application/json 82 - 200 - application/json;+charset=utf-8 4165.0382ms 
+2025-03-07 14:02:54.5898 INFO Request starting HTTP/2 POST https://localhost:7244/api/user/login application/json 47 
+2025-03-07 14:02:54.5995 INFO Executing endpoint 'GreetingApp.Controllers.UserController.Login (GreetingApp)' 
+2025-03-07 14:02:54.6322 INFO Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(ModelLayer.Model.LoginRequest) on controller GreetingApp.Controllers.UserController (GreetingApp). 
+2025-03-07 14:02:54.6322 INFO Login attemp for user: string 
+2025-03-07 14:02:54.6577 INFO Entity Framework Core 6.0.36 initialized 'UserDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.36' with options: None 
+2025-03-07 14:02:54.7841 INFO Executed DbCommand (19ms) [Parameters=[@__email_0='?' (Size = 100)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[PasswordHash], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__email_0 
+2025-03-07 14:02:54.7841 INFO User string logged in successfully. 
+2025-03-07 14:02:54.7841 INFO Executing OkObjectResult, writing value of type '<>f__AnonymousType2`3[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2025-03-07 14:02:54.7841 INFO Executed action GreetingApp.Controllers.UserController.Login (GreetingApp) in 165.5982ms 
+2025-03-07 14:02:54.7841 INFO Executed endpoint 'GreetingApp.Controllers.UserController.Login (GreetingApp)' 
+2025-03-07 14:02:54.7992 INFO Request finished HTTP/2 POST https://localhost:7244/api/user/login application/json 47 - 200 - application/json;+charset=utf-8 209.4391ms 
+2025-03-07 14:10:26.8930 INFO Application Starting... 
+2025-03-07 14:10:30.5489 INFO User profile is available. Using 'C:\Users\user\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest. 
+2025-03-07 14:10:30.5769 INFO Creating key {b8783f68-0a68-4573-8ab9-e7435f32ef7d} with creation date 2025-03-07 08:40:30Z, activation date 2025-03-07 08:40:30Z, and expiration date 2025-06-05 08:40:30Z. 
+2025-03-07 14:10:30.6107 ERROR An error occurred while encrypting to Windows DPAPI. System.MissingMethodException: Method not found: 'Boolean Microsoft.AspNetCore.Cryptography.UnsafeNativeMethods.CryptProtectData(Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, IntPtr, UInt32, Microsoft.AspNetCore.Cryptography.DATA_BLOB ByRef)'.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.ProtectWithDpapiCore(Byte* pbSecret, UInt32 cbSecret, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy, Boolean fLocalMachine)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.ProtectWithDpapi(ISecret secret, Boolean protectToLocalMachine)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlEncryptor.Encrypt(XElement plaintextElement)
+2025-03-07 14:10:30.6833 ERROR An error occurred while reading the key ring. System.MissingMethodException: Method not found: 'Boolean Microsoft.AspNetCore.Cryptography.UnsafeNativeMethods.CryptProtectData(Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, IntPtr, UInt32, Microsoft.AspNetCore.Cryptography.DATA_BLOB ByRef)'.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.ProtectWithDpapiCore(Byte* pbSecret, UInt32 cbSecret, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy, Boolean fLocalMachine)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.ProtectWithDpapi(ISecret secret, Boolean protectToLocalMachine)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlEncryptor.Encrypt(XElement plaintextElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.EncryptIfNecessary(IXmlEncryptor encryptor, XElement element)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.CreateNewKey(Guid keyId, DateTimeOffset creationDate, DateTimeOffset activationDate, DateTimeOffset expirationDate)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.CreateNewKey(DateTimeOffset activationDate, DateTimeOffset expirationDate)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider.CreateCacheableKeyRingCore(DateTimeOffset now, IKey keyJustAdded)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.ICacheableKeyRingProvider.GetCacheableKeyRing(DateTimeOffset now)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider.GetCurrentKeyRingCore(DateTime utcNow, Boolean forceRefresh)
+2025-03-07 14:10:30.6833 INFO Key ring failed to load during application startup. System.MissingMethodException: Method not found: 'Boolean Microsoft.AspNetCore.Cryptography.UnsafeNativeMethods.CryptProtectData(Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, Microsoft.AspNetCore.Cryptography.DATA_BLOB*, IntPtr, IntPtr, UInt32, Microsoft.AspNetCore.Cryptography.DATA_BLOB ByRef)'.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.ProtectWithDpapiCore(Byte* pbSecret, UInt32 cbSecret, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy, Boolean fLocalMachine)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.ProtectWithDpapi(ISecret secret, Boolean protectToLocalMachine)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlEncryptor.Encrypt(XElement plaintextElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.EncryptIfNecessary(IXmlEncryptor encryptor, XElement element)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.CreateNewKey(Guid keyId, DateTimeOffset creationDate, DateTimeOffset activationDate, DateTimeOffset expirationDate)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.CreateNewKey(DateTimeOffset activationDate, DateTimeOffset expirationDate)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider.CreateCacheableKeyRingCore(DateTimeOffset now, IKey keyJustAdded)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.ICacheableKeyRingProvider.GetCacheableKeyRing(DateTimeOffset now)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider.GetCurrentKeyRingCore(DateTime utcNow, Boolean forceRefresh)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider.GetCurrentKeyRing()
+   at Microsoft.AspNetCore.DataProtection.Internal.DataProtectionHostedService.StartAsync(CancellationToken token)
+2025-03-07 14:10:31.0878 INFO Now listening on: https://localhost:7244 
+2025-03-07 14:10:31.0878 INFO Now listening on: http://localhost:5113 
+2025-03-07 14:10:31.1507 INFO Application started. Press Ctrl+C to shut down. 
+2025-03-07 14:10:31.1507 INFO Hosting environment: Development 
+2025-03-07 14:10:31.1507 INFO Content root path: C:\Users\user\source\GreetingApp_2115100017\GreetingApp\ 
+2025-03-07 14:10:33.3491 INFO Request starting HTTP/2 GET https://localhost:7244/Swagger/index.html - - 
+2025-03-07 14:10:33.8608 INFO Request finished HTTP/2 GET https://localhost:7244/Swagger/index.html - - - 200 - text/html;charset=utf-8 513.9175ms 
+2025-03-07 14:10:33.8894 INFO Request starting HTTP/2 GET https://localhost:7244/Swagger/index.js - - 
+2025-03-07 14:10:33.8894 INFO Request starting HTTP/2 GET https://localhost:7244/_framework/aspnetcore-browser-refresh.js - - 
+2025-03-07 14:10:33.8894 INFO Request starting HTTP/2 GET https://localhost:7244/_vs/browserLink - - 
+2025-03-07 14:10:33.9032 INFO Request finished HTTP/2 GET https://localhost:7244/Swagger/index.js - - - 200 - application/javascript;charset=utf-8 13.7649ms 
+2025-03-07 14:10:33.9189 INFO Request finished HTTP/2 GET https://localhost:7244/_framework/aspnetcore-browser-refresh.js - - - 200 12354 application/javascript;+charset=utf-8 29.4682ms 
+2025-03-07 14:10:34.0238 INFO Request finished HTTP/2 GET https://localhost:7244/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 133.7921ms 
+2025-03-07 14:10:34.1730 INFO Request starting HTTP/2 GET https://localhost:7244/Swagger/v1/swagger.json - - 
+2025-03-07 14:10:34.1825 INFO Request finished HTTP/2 GET https://localhost:7244/Swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 9.4358ms 
+2025-03-07 14:11:18.7992 INFO Request starting HTTP/2 POST https://localhost:7244/api/user/register application/json 79 
+2025-03-07 14:11:19.0609 INFO Executing endpoint 'GreetingApp.Controllers.UserController.Register (GreetingApp)' 
+2025-03-07 14:11:19.1437 INFO Route matched with {action = "Register", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register(ModelLayer.Model.RegisterRequest) on controller GreetingApp.Controllers.UserController (GreetingApp). 
+2025-03-07 14:11:19.7590 INFO User Register successfully.. 
+2025-03-07 14:11:21.3673 INFO Entity Framework Core 6.0.36 initialized 'UserDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.36' with options: None 
+2025-03-07 14:11:23.3128 INFO Executed DbCommand (168ms) [Parameters=[@__email_0='?' (Size = 100)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[Email] = @__email_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END 
+2025-03-07 14:11:23.7720 INFO Executed DbCommand (33ms) [Parameters=[@p0='?' (Size = 100), @p1='?' (Size = 4000), @p2='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Users] ([Email], [PasswordHash], [UserName])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Users]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity(); 
+2025-03-07 14:11:23.9537 INFO User Registered successfully. 
+2025-03-07 14:11:23.9704 INFO Executing OkObjectResult, writing value of type 'ModelLayer.Model.ResponseModel`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2025-03-07 14:11:23.9889 INFO Executed action GreetingApp.Controllers.UserController.Register (GreetingApp) in 4836.2817ms 
+2025-03-07 14:11:23.9889 INFO Executed endpoint 'GreetingApp.Controllers.UserController.Register (GreetingApp)' 
+2025-03-07 14:11:24.0028 INFO Request finished HTTP/2 POST https://localhost:7244/api/user/register application/json 79 - 200 - application/json;+charset=utf-8 5203.7413ms 
+2025-03-07 14:11:55.8775 INFO Request starting HTTP/2 POST https://localhost:7244/api/user/login application/json 55 
+2025-03-07 14:11:55.9036 INFO Executing endpoint 'GreetingApp.Controllers.UserController.Login (GreetingApp)' 
+2025-03-07 14:11:55.9420 INFO Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(ModelLayer.Model.LoginRequest) on controller GreetingApp.Controllers.UserController (GreetingApp). 
+2025-03-07 14:11:55.9420 INFO Login attemp for user: vatsal@123.com 
+2025-03-07 14:11:55.9420 INFO Entity Framework Core 6.0.36 initialized 'UserDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.36' with options: None 
+2025-03-07 14:11:56.0391 INFO Executed DbCommand (13ms) [Parameters=[@__email_0='?' (Size = 100)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[PasswordHash], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__email_0 
+2025-03-07 14:11:56.0506 INFO User vatsal@123.com logged in successfully. 
+2025-03-07 14:11:56.0506 INFO Executing OkObjectResult, writing value of type '<>f__AnonymousType2`3[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2025-03-07 14:11:56.0506 INFO Executed action GreetingApp.Controllers.UserController.Login (GreetingApp) in 111.5974ms 
+2025-03-07 14:11:56.0506 INFO Executed endpoint 'GreetingApp.Controllers.UserController.Login (GreetingApp)' 
+2025-03-07 14:11:56.0506 INFO Request finished HTTP/2 POST https://localhost:7244/api/user/login application/json 55 - 200 - application/json;+charset=utf-8 177.5366ms 

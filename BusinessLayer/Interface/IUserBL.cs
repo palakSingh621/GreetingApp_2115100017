@@ -4,15 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ModelLayer.Model;
+using RepositoryLayer.Entity;
 
 namespace BusinessLayer.Interface
 {
     public interface IUserBL
     {
-        UserModel RegisterUser(RegisterRequest model);
-        UserModel LoginUser(LoginRequest model);
+        UserEntity RegisterUser(RegisterRequest model);
+        UserEntity LoginUser(LoginRequest model);
         string GenerateResetToken(int userId, string email);
-        UserModel GetUserByEmail(string email);
-        UserModel ResetPassword(string token, ResetPasswordDTO model);
+        UserEntity GetUserByEmail(string email);
+        UserEntity ResetPassword(string token, ResetPasswordDTO model);
     }
 }

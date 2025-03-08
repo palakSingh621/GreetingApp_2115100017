@@ -2,6 +2,7 @@
 using RepositoryLayer.Interface;
 using BusinessLayer.Interface;
 using RepositoryLayer.Hashing;
+using RepositoryLayer.Entity;
 using System.Text;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
@@ -20,7 +21,7 @@ namespace BusinessLayer.Service
             _userRepository = userRepository;
         }
 
-        public UserModel RegisterUser(RegisterRequest model)
+        public UserEntity RegisterUser(RegisterRequest model)
         {
             if (_userRepository.UserExists(model.Email))
                 return null;
@@ -29,7 +30,7 @@ namespace BusinessLayer.Service
             return user;
         }
 
-        public UserModel LoginUser(LoginRequest model)
+        public UserEntity LoginUser(LoginRequest model)
         {
             var user = _userRepository.GetUserByEmail(model.Email);
             if (user == null || !HashingHelper.VerifyPassword(model.Password, user.PasswordHash))
@@ -41,11 +42,11 @@ namespace BusinessLayer.Service
         {
             return _userRepository.GenerateResetToken(userId, email);
         }
-        public UserModel GetUserByEmail(string email)
+        public UserEntity GetUserByEmail(string email)
         {
             return _userRepository.GetUserByEmail(email);
         }
-        public UserModel ResetPassword(string token,ResetPasswordDTO model)
+        public UserEntity ResetPassword(string token,ResetPasswordDTO model)
         {
             int userId=_userRepository.ResetPassword(token, model);
             var user = _userRepository.GetUserById(userId);

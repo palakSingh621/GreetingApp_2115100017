@@ -10,10 +10,10 @@ namespace BusinessLayer.Interface
     public interface IGreetingBL
     {
         string GetGreetingsBL(string firstName, string lastName);
-        void SaveGreeting(string message);
-        List<GreetingMessageEntity> GetAllGreetings();
-        GreetingMessageEntity GetGreetingById(int id);
-        bool UpdateGreeting(int id, string newMessage);
-        bool DeleteGreeting(int id);
+        void SaveGreeting(int userId, string message);
+        List<GreetingMessageEntity> GetAllGreetings(int userId);
+        GreetingMessageEntity GetGreetingById(int userId, int id);
+        bool UpdateGreeting(int userId, int id, string newMessage);
+        bool DeleteGreeting(int userId, int id);
     }
 }

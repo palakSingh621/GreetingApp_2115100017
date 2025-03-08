@@ -40,26 +40,37 @@ namespace RepositoryLayer.Service
             }
         }
 
-        public GreetingMessageEntity GetGreetingById(int id)
+        public GreetingMessageEntity GetGreetingById(int userId, int id)
         {
-            return _context.GreetingMessages.FirstOrDefault(g => g.Id == id);
+            return _context.GreetingMessages.FirstOrDefault(g => g.UserId == userId && g.Id == id);
         }
 
-        public void SaveGreeting(string message)
+        public GreetingMessageEntity SaveGreeting(int userId, string message)
         {
-            var greeting = new GreetingMessageEntity { Message = message };
+            //// Validate user existence
+            var user = _context.Users.FirstOrDefault(u => u.Id == userId);
+            if (user == null)
+            {
+                throw new InvalidOperationException("User not found. Please log in.");
+            }
+            var greeting = new GreetingMessageEntity
+            {
+                UserId = userId,
+                Message = message
+            };
             _context.GreetingMessages.Add(greeting);
             _context.SaveChanges();
+            return greeting;
         }
 
-        public List<GreetingMessageEntity> GetAllGreetings()
+        public List<GreetingMessageEntity> GetAllGreetings(int userId)
         {
-            return _context.GreetingMessages.ToList();
+            return _context.GreetingMessages.Where(g => g.UserId == userId).ToList();
         }
 
-        public bool UpdateGreeting(int id, string newMessage)
+        public bool UpdateGreeting(int userId, int id, string newMessage)
         {
-            var greeting = _context.GreetingMessages.FirstOrDefault(gre => gre.Id == id);
+            var greeting = _context.GreetingMessages.FirstOrDefault(g => g.Id == id && g.UserId == userId);
             if(greeting ==null)
             {
                 return false;
@@ -68,9 +79,9 @@ namespace RepositoryLayer.Service
             _context.SaveChanges();
             return true;
         }
-        public bool DeleteGreeting(int id)
+        public bool DeleteGreeting(int userId,int id)
         {
-            var greeting = _context.GreetingMessages.Find(id);
+            var greeting = _context.GreetingMessages.FirstOrDefault(g => g.Id == id && g.UserId == userId);
             if (greeting != null)
             {
                 _context.GreetingMessages.Remove(greeting);

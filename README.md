@@ -24,8 +24,12 @@
  1. Previous Controller will have all the api's from UC1 to UC8. Creating Second Controller (UserController) where it will contain api for login, registration, forget password     and reset password. Apply logic for registration and loginapi for user. Apply hashing also(salting) for register and login.
  2. Setting up Redis Cache for Greeting Messages.
 
-**UC11:** Appling  JWT into project.
+**UC11:** Applying  JWT into project.
 
 **UC12:** Giving body to Forget password by applying SMTP server mail generation and sending token generated using jwt in the mail and 
 giving body to Reset password using JWT token received in mail.
 
+**UC13:** Create Primary/Foreign key relationship between greeting and user table.
+Adjust greeting methods according to new relationship.
+
+**UC14:** Applying Redis and RabbitMQ.

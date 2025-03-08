@@ -1,8 +1,8 @@
 ﻿using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
-using ModelLayer.Model;
 using System.Text;
+using RepositoryLayer.Entity;
 
 namespace GreetingApp.Helper
 {
@@ -14,7 +14,7 @@ namespace GreetingApp.Helper
             _configuration = configuration;
         }
 
-        public string GenerateToken(UserModel user)
+        public string GenerateToken(UserEntity user)
         {
             if (user == null)
             {
@@ -31,9 +31,8 @@ namespace GreetingApp.Helper
 
             var claims = new[]
             {
-                new Claim(JwtRegisteredClaimNames.Sub, user.Email),
-                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                new Claim("userId", user.UserName),
+                new Claim("userId",user.Id.ToString()),
+                new Claim("userName", user.UserName),
                 new Claim("email", user.Email)
             };
 
@@ -41,7 +40,7 @@ namespace GreetingApp.Helper
             issuer: jwtSettings["Issuer"],
             audience: jwtSettings["Audience"],
             claims: claims,
-            expires: DateTime.Now.AddMinutes(1),
+            expires: DateTime.Now.AddMinutes(60),
             signingCredentials: credentials
         );
             return new JwtSecurityTokenHandler().WriteToken(token);

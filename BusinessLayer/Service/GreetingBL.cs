@@ -20,26 +20,26 @@ namespace BusinessLayer.Service
         {
             return _greetingRL.GetGreetingsRL(firstName,lastName);
         }
-        public void SaveGreeting(string message)
+        public void SaveGreeting(int userId,string message)
         {
-            _greetingRL.SaveGreeting(message);
+            _greetingRL.SaveGreeting(userId,message);
         }
 
-        public List<GreetingMessageEntity> GetAllGreetings()
+        public List<GreetingMessageEntity> GetAllGreetings(int userId)
         {
-            return _greetingRL.GetAllGreetings();
+            return _greetingRL.GetAllGreetings(userId);
         }
-        public GreetingMessageEntity GetGreetingById(int id)
+        public GreetingMessageEntity GetGreetingById(int userId,int id)
         {
-            return _greetingRL.GetGreetingById(id);
+            return _greetingRL.GetGreetingById(userId,id);
         }
-        public bool UpdateGreeting(int id, string newMessage)
+        public bool UpdateGreeting(int userId, int id, string newMessage)
         {
-            return _greetingRL.UpdateGreeting(id, newMessage);
+            return _greetingRL.UpdateGreeting(userId, id, newMessage);
         }
-        public bool DeleteGreeting(int id)
+        public bool DeleteGreeting(int userId, int id)
         {
-            return _greetingRL.DeleteGreeting(id);
+            return _greetingRL.DeleteGreeting(userId, id);
         }
     }
 }

@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ModelLayer.Model
+namespace RepositoryLayer.Entity
 {
-    public class UserModel
+    public class UserEntity
     {
         [Key]
         public int Id { get; set; }
@@ -20,5 +20,8 @@ namespace ModelLayer.Model
 
         [Required]
         public string PasswordHash { get; set; }
+
+        //Navigation Property
+        public ICollection<GreetingMessageEntity> Greeting { get; set; } 
     }
 }

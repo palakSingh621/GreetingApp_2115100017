@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using ModelLayer.Model;
 using RepositoryLayer.Context;
+using RepositoryLayer.Entity;
 using RepositoryLayer.Interface;
 
 namespace RepositoryLayer.Service
@@ -17,9 +18,9 @@ namespace RepositoryLayer.Service
     public class UserRL : IUserRL
     {
         private readonly IConfiguration _config;
-        private readonly UserDbContext _context;
+        private readonly GreetingAppContext _context;
 
-        public UserRL(IConfiguration config, UserDbContext context)
+        public UserRL(IConfiguration config, GreetingAppContext context)
         {
             _config = config;
             _context = context;
@@ -27,18 +28,18 @@ namespace RepositoryLayer.Service
 
         public bool UserExists(string email) => _context.Users.Any(u => u.Email ==email);
 
-        public UserModel CreateUser(string username, string email, string passwordHash)
+        public UserEntity CreateUser(string username, string email, string passwordHash)
         {
-            var user = new UserModel { UserName= username, Email = email, PasswordHash = passwordHash };
+            var user = new UserEntity { UserName= username, Email = email, PasswordHash = passwordHash };
             _context.Users.Add(user);
             _context.SaveChanges();
             return user;
         }
-        public UserModel GetUserByEmail(string email)
+        public UserEntity GetUserByEmail(string email)
         {
             return _context.Users.FirstOrDefault(u => u.Email == email);
         }
-        public UserModel GetUserById(int userId)
+        public UserEntity GetUserById(int userId)
         {
             return _context.Users.FirstOrDefault(user => user.Id == userId);
         }

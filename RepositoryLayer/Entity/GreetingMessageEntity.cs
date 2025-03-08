@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RepositoryLayer.Entity
 {
@@ -16,5 +11,12 @@ namespace RepositoryLayer.Entity
 
         [Required]
         public string Message { get; set; }
+
+        // Foreign Key
+        public int UserId { get; set; }
+
+        //Navigation Property
+        [ForeignKey("UserId")]
+        public UserEntity Users { get; set; }
     }
 }

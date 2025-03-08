@@ -22,9 +22,9 @@ logger.Info("Application Starting...");
 builder.Services.AddDbContext<GreetingAppContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("SqlConnection")));
 
-// Add User API database
-builder.Services.AddDbContext<UserDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("UserDbConnection")));
+//// Add User API database
+//builder.Services.AddDbContext<UserDbContext>(options =>
+//    options.UseSqlServer(builder.Configuration.GetConnectionString("UserDbConnection")));
 
 var jwtSettings = builder.Configuration.GetSection("Jwt");
 // Add JWT Authentication
@@ -33,6 +33,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     {
         options.TokenValidationParameters = new TokenValidationParameters
         {
+            ValidateIssuerSigningKey=true,
             ValidateIssuer = true,
             ValidateAudience = true,
             ValidateLifetime = true,
@@ -78,6 +79,7 @@ app.UseSwagger();
 app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
+
 app.UseAuthentication();
 
 app.UseAuthorization();
